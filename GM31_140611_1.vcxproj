@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="actor_cursor.cpp" />
+    <ClCompile Include="battle_actor_ghost.cpp" />
+    <ClCompile Include="battle_actor_state.cpp" />
+    <ClCompile Include="attack.cpp" />
+    <ClCompile Include="attack_accessor.cpp" />
+    <ClCompile Include="attack_sphere.cpp" />
+    <ClCompile Include="battle_action.cpp" />
+    <ClCompile Include="battle_action_queue.cpp" />
+    <ClCompile Include="battle_action_skill.cpp" />
+    <ClCompile Include="battle_action_walk.cpp" />
+    <ClCompile Include="battle_actor_state_dead.cpp" />
+    <ClCompile Include="battle_actor_state_idle.cpp" />
+    <ClCompile Include="battle_actor_state_walk.cpp" />
+    <ClCompile Include="battle_commander_state_free.cpp" />
+    <ClCompile Include="battle_commander_state_direction.cpp" />
+    <ClCompile Include="battle_end_demo.cpp" />
+    <ClCompile Include="battle_end_demo_lose.cpp" />
+    <ClCompile Include="battle_end_demo_none.cpp" />
+    <ClCompile Include="battle_end_demo_win.cpp" />
+    <ClCompile Include="battle_operation.cpp" />
+    <ClCompile Include="battle_operation_attack.cpp" />
+    <ClCompile Include="battle_skill_attack.cpp" />
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="camera_director.cpp" />
+    <ClCompile Include="camera_ortho.cpp" />
+    <ClCompile Include="battle_commander_state.cpp" />
+    <ClCompile Include="cursor3d.cpp" />
+    <ClCompile Include="cursor_director.cpp" />
+    <ClCompile Include="damage_calculator.cpp" />
+    <ClCompile Include="damage_popup.cpp" />
+    <ClCompile Include="debug.cpp" />
+    <ClCompile Include="enemy_ai.cpp" />
+    <ClCompile Include="enemy_ai_attack_neighbor.cpp" />
+    <ClCompile Include="fade.cpp" />
+    <ClCompile Include="battle.cpp" />
+    <ClCompile Include="battle_object_accessor.cpp" />
+    <ClCompile Include="gimmick.cpp" />
+    <ClCompile Include="gimmick_ladder.cpp" />
+    <ClCompile Include="guide_arrow.cpp" />
+    <ClCompile Include="hit.cpp" />
+    <ClCompile Include="hit_checker_actor_field.cpp" />
+    <ClCompile Include="hit_checker_actor_gimmick.cpp" />
+    <ClCompile Include="hit_checker_actor_tile_field.cpp" />
+    <ClCompile Include="hit_checker_attack_actor..cpp" />
+    <ClCompile Include="hit_cube.cpp" />
+    <ClCompile Include="hit_sphere.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="battle_commander.cpp" />
+    <ClCompile Include="joypad.cpp" />
+    <ClCompile Include="judge.cpp" />
+    <ClCompile Include="judge_battle_end.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="manager.cpp" />
+    <ClCompile Include="model_field.cpp" />
+    <ClCompile Include="mouse_cursor.cpp" />
+    <ClCompile Include="my_math.cpp" />
+    <ClCompile Include="number.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="object2d.cpp" />
+    <ClCompile Include="object_billboard.cpp" />
+    <ClCompile Include="object_effect.cpp" />
+    <ClCompile Include="object_x.cpp" />
+    <ClCompile Include="pixel_shader.cpp" />
+    <ClCompile Include="battle_actor.cpp" />
+    <ClCompile Include="ps2d.cpp" />
+    <ClCompile Include="ps_toon.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="render_texture.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="scene_factory.cpp" />
+    <ClCompile Include="battle_skill.cpp" />
+    <ClCompile Include="skin_mesh.cpp" />
+    <ClCompile Include="sprite3d.cpp" />
+    <ClCompile Include="tile_field.cpp" />
+    <ClCompile Include="tile_field_image.cpp" />
+    <ClCompile Include="vertex_shader.cpp" />
+    <ClCompile Include="vs2d.cpp" />
+    <ClCompile Include="vs_instancing.cpp" />
+    <ClCompile Include="vs_skin_mesh.cpp" />
+    <ClCompile Include="vs_toon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="actor_cursor.h" />
+    <ClInclude Include="battle_actor_ghost.h" />
+    <ClInclude Include="battle_actor_state.h" />
+    <ClInclude Include="attack.h" />
+    <ClInclude Include="attack_accessor.h" />
+    <ClInclude Include="attack_sphere.h" />
+    <ClInclude Include="battle_action.h" />
+    <ClInclude Include="battle_action_queue.h" />
+    <ClInclude Include="battle_action_skill.h" />
+    <ClInclude Include="battle_action_walk.h" />
+    <ClInclude Include="battle_actor_state_dead.h" />
+    <ClInclude Include="battle_actor_state_idle.h" />
+    <ClInclude Include="battle_actor_state_walk.h" />
+    <ClInclude Include="battle_commander_state_free.h" />
+    <ClInclude Include="battle_commander_state_direction.h" />
+    <ClInclude Include="battle_end_demo.h" />
+    <ClInclude Include="battle_end_demo_lose.h" />
+    <ClInclude Include="battle_end_demo_none.h" />
+    <ClInclude Include="battle_end_demo_win.h" />
+    <ClInclude Include="battle_operation.h" />
+    <ClInclude Include="battle_operation_attack.h" />
+    <ClInclude Include="battle_skill_attack.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="camera_director.h" />
+    <ClInclude Include="camera_ortho.h" />
+    <ClInclude Include="battle_commander_state.h" />
+    <ClInclude Include="constant.h" />
+    <ClInclude Include="cursor3d.h" />
+    <ClInclude Include="cursor_director.h" />
+    <ClInclude Include="damage_calculator.h" />
+    <ClInclude Include="damage_popup.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="enemy_ai.h" />
+    <ClInclude Include="enemy_ai_attack_neighbor.h" />
+    <ClInclude Include="fade.h" />
+    <ClInclude Include="battle.h" />
+    <ClInclude Include="battle_object_accessor.h" />
+    <ClInclude Include="gimmick.h" />
+    <ClInclude Include="gimmick_ladder.h" />
+    <ClInclude Include="guide_arrow.h" />
+    <ClInclude Include="hit.h" />
+    <ClInclude Include="hit_checker_actor_field.h" />
+    <ClInclude Include="hit_checker_actor_gimmick.h" />
+    <ClInclude Include="hit_checker_actor_tile_field.h" />
+    <ClInclude Include="hit_checker_attack_actor.h" />
+    <ClInclude Include="hit_cube.h" />
+    <ClInclude Include="hit_sphere.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="battle_commander.h" />
+    <ClInclude Include="joypad.h" />
+    <ClInclude Include="judge.h" />
+    <ClInclude Include="judge_battle_end.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="manager.h" />
+    <ClInclude Include="model_field.h" />
+    <ClInclude Include="mouse_cursor.h" />
+    <ClInclude Include="my_math.h" />
+    <ClInclude Include="number.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="object2d.h" />
+    <ClInclude Include="object_billboard.h" />
+    <ClInclude Include="object_effect.h" />
+    <ClInclude Include="object_x.h" />
+    <ClInclude Include="pixel_shader.h" />
+    <ClInclude Include="battle_actor.h" />
+    <ClInclude Include="ps2d.h" />
+    <ClInclude Include="ps_toon.h" />
+    <ClInclude Include="renderer.h" />
+    <ClInclude Include="render_texture.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="scene_factory.h" />
+    <ClInclude Include="battle_skill.h" />
+    <ClInclude Include="skin_mesh.h" />
+    <ClInclude Include="sprite3d.h" />
+    <ClInclude Include="tile_field.h" />
+    <ClInclude Include="tile_field_image.h" />
+    <ClInclude Include="vertex_shader.h" />
+    <ClInclude Include="vs2d.h" />
+    <ClInclude Include="vs_instancing.h" />
+    <ClInclude Include="vs_skin_mesh.h" />
+    <ClInclude Include="vs_toon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\SHADER\half_lambert.hlsl" />
+    <None Include="data\SHADER\lambert.hlsl" />
+    <None Include="data\SHADER\shader.hlsl" />
+    <None Include="data\SHADER\toon.hlsl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6DF4CD5C-D307-4BDA-8273-A3130A23D464}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GM31_140611_1</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(SolutionDir)\lib\VS2013\Debug;$(LibraryPath)</LibraryPath>
+    <ExcludePath>$(ExcludePath)</ExcludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\</OutDir>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(SolutionDir)\lib\VS2013\Release;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

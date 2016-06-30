@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="シェーダ">
+      <UniqueIdentifier>{ea103c43-b32c-402b-9bed-a2baa0161824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\DrawObject">
+      <UniqueIdentifier>{82984392-1949-448f-9a11-48e924ff0993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\DrawObject">
+      <UniqueIdentifier>{475a48de-801f-4bca-81f8-5369f3bc0d6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{806502f1-590b-45e0-8224-30c1b6f31f10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{106d795e-f90b-47ea-b660-4888ef655abd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Rendering">
+      <UniqueIdentifier>{864fd165-d4ad-4aee-ae58-6a44b15d68bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Input">
+      <UniqueIdentifier>{6fc1fa04-a9e2-4626-a416-d058ab092606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Rendering">
+      <UniqueIdentifier>{ccbc7b05-e4db-45ed-9a21-8814ebff6423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Input">
+      <UniqueIdentifier>{f1b3a128-de14-453c-b357-a479e6677caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game">
+      <UniqueIdentifier>{88e71f4d-fea8-461c-a769-e01411d75934}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game">
+      <UniqueIdentifier>{1bbd1d23-4ef0-4f36-bdfa-8c87e268a258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\BattleAction">
+      <UniqueIdentifier>{036886bc-a1f2-4169-a5a8-dbe396b895c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\BattleAction">
+      <UniqueIdentifier>{037f4afd-369c-4fb8-93d1-5acb993b75fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Attack">
+      <UniqueIdentifier>{01dc17ef-f63b-4162-acb5-35f92465e5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Attack">
+      <UniqueIdentifier>{875ef203-46b6-48c7-91c6-1af5078ad0a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Hit">
+      <UniqueIdentifier>{586291a7-542c-409a-be4e-5f4d49d57593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Hit">
+      <UniqueIdentifier>{e4fed3b7-7291-402f-bfe6-0f5c4f756407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Judge">
+      <UniqueIdentifier>{747d4965-5dba-4992-9eb2-090cf051b8af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Judge">
+      <UniqueIdentifier>{ba281974-b338-474c-906b-aba4d54bca45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Skill">
+      <UniqueIdentifier>{48e47bd8-35b5-4eeb-896b-a7ec47c086e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Skill">
+      <UniqueIdentifier>{d16a04d7-6dac-465e-b47e-23e0c6f6c145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Operation">
+      <UniqueIdentifier>{e7473a75-bf1d-4d71-b364-fe03c2806d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Operation">
+      <UniqueIdentifier>{2d653262-4a88-4185-812a-0d4af4d40fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Actor">
+      <UniqueIdentifier>{822a38eb-0978-4f41-9bdf-2d14edc97050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Actor">
+      <UniqueIdentifier>{65ae12b0-0b56-419d-a977-c0ac1a32afc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\EndDemo">
+      <UniqueIdentifier>{25e14700-4e88-4795-bafb-5f72911a65ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\EndDemo">
+      <UniqueIdentifier>{e008e1eb-55c1-412e-9642-8b305a53d132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Commander">
+      <UniqueIdentifier>{8d09cc44-5535-4def-9d94-7c09029ea83e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Commander">
+      <UniqueIdentifier>{4669fda4-ca42-4227-a7aa-0dd5a709be1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\Gimmick">
+      <UniqueIdentifier>{7f1c93cf-3d63-4d52-b4df-ef617c25f9d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\Gimmick">
+      <UniqueIdentifier>{8c517546-8758-471b-acc0-4361fb3ca390}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\AI">
+      <UniqueIdentifier>{c56002eb-d242-44ac-9487-8898f9e40fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\AI">
+      <UniqueIdentifier>{8cefc281-2347-4bab-8b54-dfa2ebf2bab1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="my_math.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="manager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="object_x.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="object2d.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_factory.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="camera_ortho.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="fade.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>ソース ファイル\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="joypad.cpp">
+      <Filter>ソース ファイル\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="number.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="pixel_shader.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ps_toon.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="render_texture.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex_shader.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="vs_toon.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="cursor_director.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="cursor3d.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="model_field.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse_cursor.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_action.cpp">
+      <Filter>ソース ファイル\Scene\Game\BattleAction</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_action_queue.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="attack.cpp">
+      <Filter>ソース ファイル\Scene\Game\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="attack_sphere.cpp">
+      <Filter>ソース ファイル\Scene\Game\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="attack_accessor.cpp">
+      <Filter>ソース ファイル\Scene\Game\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="vs2d.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ps2d.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="hit.cpp">
+      <Filter>ソース ファイル\Scene\Game\Hit</Filter>
+    </ClCompile>
+    <ClCompile Include="hit_sphere.cpp">
+      <Filter>ソース ファイル\Scene\Game\Hit</Filter>
+    </ClCompile>
+    <ClCompile Include="judge.cpp">
+      <Filter>ソース ファイル\Scene\Game\Judge</Filter>
+    </ClCompile>
+    <ClCompile Include="hit_checker_attack_actor..cpp">
+      <Filter>ソース ファイル\Scene\Game\Judge</Filter>
+    </ClCompile>
+    <ClCompile Include="hit_checker_actor_field.cpp">
+      <Filter>ソース ファイル\Scene\Game\Judge</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_skill.cpp">
+      <Filter>ソース ファイル\Scene\Game\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_skill_attack.cpp">
+      <Filter>ソース ファイル\Scene\Game\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_operation.cpp">
+      <Filter>ソース ファイル\Scene\Game\Operation</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_operation_attack.cpp">
+      <Filter>ソース ファイル\Scene\Game\Operation</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_action_skill.cpp">
+      <Filter>ソース ファイル\Scene\Game\BattleAction</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_actor.cpp">
+      <Filter>ソース ファイル\Scene\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="battle.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_object_accessor.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_actor_state.cpp">
+      <Filter>ソース ファイル\Scene\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_actor_state_idle.cpp">
+      <Filter>ソース ファイル\Scene\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_actor_state_walk.cpp">
+      <Filter>ソース ファイル\Scene\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_action_walk.cpp">
+      <Filter>ソース ファイル\Scene\Game\BattleAction</Filter>
+    </ClCompile>
+    <ClCompile Include="object_billboard.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="damage_popup.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_actor_state_dead.cpp">
+      <Filter>ソース ファイル\Scene\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="damage_calculator.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="judge_battle_end.cpp">
+      <Filter>ソース ファイル\Scene\Game\Judge</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_end_demo.cpp">
+      <Filter>ソース ファイル\Scene\Game\EndDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_end_demo_win.cpp">
+      <Filter>ソース ファイル\Scene\Game\EndDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_end_demo_lose.cpp">
+      <Filter>ソース ファイル\Scene\Game\EndDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_end_demo_none.cpp">
+      <Filter>ソース ファイル\Scene\Game\EndDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="skin_mesh.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="vs_skin_mesh.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="object_effect.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="actor_cursor.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_commander.cpp">
+      <Filter>ソース ファイル\Scene\Game\Commander</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_commander_state.cpp">
+      <Filter>ソース ファイル\Scene\Game\Commander</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_commander_state_free.cpp">
+      <Filter>ソース ファイル\Scene\Game\Commander</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_commander_state_direction.cpp">
+      <Filter>ソース ファイル\Scene\Game\Commander</Filter>
+    </ClCompile>
+    <ClCompile Include="battle_actor_ghost.cpp">
+      <Filter>ソース ファイル\Scene\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="guide_arrow.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite3d.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="camera_director.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="tile_field.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="tile_field_image.cpp">
+      <Filter>ソース ファイル\DrawObject</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="vs_instancing.cpp">
+      <Filter>ソース ファイル\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="hit_checker_actor_tile_field.cpp">
+      <Filter>ソース ファイル\Scene\Game\Judge</Filter>
+    </ClCompile>
+    <ClCompile Include="gimmick.cpp">
+      <Filter>ヘッダー ファイル\Scene\Game\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="gimmick_ladder.cpp">
+      <Filter>ヘッダー ファイル\Scene\Game\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="hit_cube.cpp">
+      <Filter>ソース ファイル\Scene\Game\Hit</Filter>
+    </ClCompile>
+    <ClCompile Include="hit_checker_actor_gimmick.cpp">
+      <Filter>ソース ファイル\Scene\Game\Judge</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy_ai.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy_ai_attack_neighbor.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="my_math.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="manager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="number.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="object_x.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="object2d.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_factory.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="vs_toon.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_shader.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="render_texture.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ps_toon.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="pixel_shader.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="camera_ortho.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="fade.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>ヘッダー ファイル\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="joypad.h">
+      <Filter>ヘッダー ファイル\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="cursor_director.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="cursor3d.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="model_field.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse_cursor.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_action.h">
+      <Filter>ヘッダー ファイル\Scene\Game\BattleAction</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_action_queue.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="attack.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="attack_sphere.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="attack_accessor.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="ps2d.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="vs2d.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="hit.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Hit</Filter>
+    </ClInclude>
+    <ClInclude Include="hit_sphere.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Hit</Filter>
+    </ClInclude>
+    <ClInclude Include="judge.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Judge</Filter>
+    </ClInclude>
+    <ClInclude Include="hit_checker_attack_actor.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Judge</Filter>
+    </ClInclude>
+    <ClInclude Include="hit_checker_actor_field.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Judge</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_skill.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_skill_attack.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_operation.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Operation</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_operation_attack.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Operation</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_action_skill.h">
+      <Filter>ヘッダー ファイル\Scene\Game\BattleAction</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_actor.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="battle.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_object_accessor.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_actor_state.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_actor_state_idle.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_actor_state_walk.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_action_walk.h">
+      <Filter>ヘッダー ファイル\Scene\Game\BattleAction</Filter>
+    </ClInclude>
+    <ClInclude Include="object_billboard.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="damage_popup.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_actor_state_dead.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="damage_calculator.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="judge_battle_end.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Judge</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_end_demo.h">
+      <Filter>ヘッダー ファイル\Scene\Game\EndDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_end_demo_win.h">
+      <Filter>ヘッダー ファイル\Scene\Game\EndDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_end_demo_lose.h">
+      <Filter>ヘッダー ファイル\Scene\Game\EndDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_end_demo_none.h">
+      <Filter>ヘッダー ファイル\Scene\Game\EndDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="skin_mesh.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="vs_skin_mesh.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="object_effect.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="actor_cursor.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_commander.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Commander</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_commander_state.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Commander</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_commander_state_free.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Commander</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_commander_state_direction.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Commander</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_actor_ghost.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="guide_arrow.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite3d.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="constant.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="camera_director.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="tile_field.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="tile_field_image.h">
+      <Filter>ヘッダー ファイル\DrawObject</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="vs_instancing.h">
+      <Filter>ヘッダー ファイル\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="hit_checker_actor_tile_field.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Judge</Filter>
+    </ClInclude>
+    <ClInclude Include="gimmick.h">
+      <Filter>ソース ファイル\Scene\Game\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="gimmick_ladder.h">
+      <Filter>ソース ファイル\Scene\Game\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="hit_cube.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Hit</Filter>
+    </ClInclude>
+    <ClInclude Include="hit_checker_actor_gimmick.h">
+      <Filter>ヘッダー ファイル\Scene\Game\Judge</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_ai.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_ai_attack_neighbor.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\SHADER\shader.hlsl">
+      <Filter>シェーダ</Filter>
+    </None>
+    <None Include="data\SHADER\lambert.hlsl">
+      <Filter>シェーダ</Filter>
+    </None>
+    <None Include="data\SHADER\half_lambert.hlsl">
+      <Filter>シェーダ</Filter>
+    </None>
+    <None Include="data\SHADER\toon.hlsl">
+      <Filter>シェーダ</Filter>
+    </None>
+  </ItemGroup>
+</Project>

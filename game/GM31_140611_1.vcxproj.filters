@@ -357,6 +357,9 @@
     <ClCompile Include="enemy_ai_wait.cpp">
       <Filter>ソース ファイル\Scene\Game\AI</Filter>
     </ClCompile>
+    <ClCompile Include="enemy_ai_escape.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -603,6 +606,9 @@
       <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
     </ClInclude>
     <ClInclude Include="enemy_ai_wait.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_ai_escape.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
     </ClInclude>
   </ItemGroup>

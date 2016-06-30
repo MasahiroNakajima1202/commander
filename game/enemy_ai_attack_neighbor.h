@@ -17,7 +17,7 @@
 class EnemyAIAttackNeighbor : public EnemyAI{
 public:
 
-	EnemyAIAttackNeighbor(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner);
+	EnemyAIAttackNeighbor(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner, BattleActor* target);
 
 	virtual ~EnemyAIAttackNeighbor();
 
@@ -25,6 +25,7 @@ public:
 
 	//accessor
 protected:
+	BattleActor* _target;
 };
 
 

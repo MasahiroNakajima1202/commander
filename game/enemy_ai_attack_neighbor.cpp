@@ -15,8 +15,9 @@
 //*****************************************************************************
 
 
-EnemyAIAttackNeighbor::EnemyAIAttackNeighbor(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner):
-EnemyAI(accessor, renderer, owner){
+EnemyAIAttackNeighbor::EnemyAIAttackNeighbor(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner, BattleActor* target):
+EnemyAI(accessor, renderer, owner),
+_target(target){
 }
 
 EnemyAIAttackNeighbor::~EnemyAIAttackNeighbor(){
@@ -27,35 +28,18 @@ void EnemyAIAttackNeighbor::Update(void){
 	if(_accessor == nullptr){return;}
 	if(_owner == nullptr){return;}
 
-	//一番近いターゲットの索敵
-	float min_length(1000000.0f);
-	BattleActor* target_player(nullptr);
-	for(int i = 0; i<PLAYER_MAX; i++){
-		BattleActor* player(_accessor->GetPlayer(i));
-		if(player == nullptr){continue;}
+	if(_target == nullptr){return;}
 
-		D3DXVECTOR3 player_position(player->GetPosition());
-		D3DXVECTOR3 enemy_position(_owner->GetPosition());
-		D3DXVECTOR3 enemy_to_player(player_position - enemy_position);
-		D3DXVECTOR3 h_enemy_to_player(enemy_to_player);
-		h_enemy_to_player.y = 0.0f;
-
-		float h_sq_length(D3DXVec3LengthSq(&h_enemy_to_player));
-		if(h_sq_length < min_length){
-			min_length = h_sq_length;
-			target_player = player;
-		}
-	}
-
-	min_length = sqrt(min_length);
-
+	
+	D3DXVECTOR3 to_target(_target->GetPosition() - _owner->GetPosition());
+	float length(D3DXVec3Length(&to_target));
 	const float SEARCH_RANGE(50.0f);
 	const float ATTACK_RANGE(10.0f);
-	if(target_player == nullptr || min_length > SEARCH_RANGE){return;}
+	if(length > SEARCH_RANGE){return;}
 	
 	//一定以上なら向かう
-	if(min_length > ATTACK_RANGE){
-		_owner->WalkTo(target_player->GetPosition());
+	if(length > ATTACK_RANGE){
+		_owner->WalkTo(_target->GetPosition());
 	}
 	//十分近かったらそいつの方向いて攻撃
 	else{

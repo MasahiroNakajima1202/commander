@@ -23,6 +23,7 @@
 
 #include "enemy_ai.h"
 #include "enemy_ai_attack_neighbor.h"
+#include "enemy_ai_wait.h"
 
 #include "gimmick.h"
 #include "gimmick_ladder.h"
@@ -242,7 +243,8 @@ _popup(nullptr){
 	_gimmick_array[8] = new GimmickLadder(_renderer, D3DXVECTOR3(220.0f, 80.0f, -280.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f), 6);
 
 	//ai test
-	EnemyAIAttackNeighbor* enemy_ai(new EnemyAIAttackNeighbor(this, _renderer, _enemy_array[0], _player_array[0]));
+	//EnemyAIAttackNeighbor* enemy_ai(new EnemyAIAttackNeighbor(this, _renderer, _enemy_array[0], _player_array[0]));
+	EnemyAIWait* enemy_ai(new EnemyAIWait(this, _renderer, _enemy_array[0]));
 	_enemy_ai_array[0] = enemy_ai;
 
 	_camera_director = new CameraDirector(_player_array[0], _camera);

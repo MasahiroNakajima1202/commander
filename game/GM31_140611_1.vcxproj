@@ -44,6 +44,7 @@
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="enemy_ai.cpp" />
     <ClCompile Include="enemy_ai_attack_neighbor.cpp" />
+    <ClCompile Include="enemy_ai_wait.cpp" />
     <ClCompile Include="fade.cpp" />
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="battle_object_accessor.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="debug.h" />
     <ClInclude Include="enemy_ai.h" />
     <ClInclude Include="enemy_ai_attack_neighbor.h" />
+    <ClInclude Include="enemy_ai_wait.h" />
     <ClInclude Include="fade.h" />
     <ClInclude Include="battle.h" />
     <ClInclude Include="battle_object_accessor.h" />

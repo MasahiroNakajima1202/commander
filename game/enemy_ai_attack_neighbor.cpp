@@ -35,7 +35,6 @@ void EnemyAIAttackNeighbor::Update(void){
 	float length(D3DXVec3Length(&to_target));
 	const float SEARCH_RANGE(50.0f);
 	const float ATTACK_RANGE(10.0f);
-	if(length > SEARCH_RANGE){return;}
 	
 	//ˆê’èˆÈã‚È‚çŒü‚©‚¤
 	if(length > ATTACK_RANGE){

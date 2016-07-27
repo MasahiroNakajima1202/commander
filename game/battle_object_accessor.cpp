@@ -250,6 +250,7 @@ _popup(nullptr){
 	_enemy_ai_array[0] = enemy_ai;
 
 	_camera_director = new CameraDirector(_player_array[0], _camera);
+
 }
 
 BattleObjectAccessor::~BattleObjectAccessor(){

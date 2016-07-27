@@ -50,21 +50,19 @@ void EnemyAIEscape::Update(void){
 	const float SEARCH_RANGE(200.0f);
 	if(target_player == nullptr){return;}
 	
-	//\•ª‹ß‚©‚Á‚½‚ç“¦‚°‚é
-	if(min_length < SEARCH_RANGE){
-		D3DXVECTOR3 direction(_owner->GetPosition() - target_player->GetPosition());
-		if(D3DXVec3LengthSq(&direction) > 0.0f){
-			D3DXVec3Normalize(&direction, &direction);
-		}
-		else{
-			direction = D3DXVECTOR3(0.0f, 0.0f, 1.0f);
-		}
-
-		float length(10.0f);
-		_owner->WalkTo(_owner->GetPosition() + direction * length);
-
-		//Œü‚«‡‚í‚¹
+	
+	D3DXVECTOR3 direction(_owner->GetPosition() - target_player->GetPosition());
+	if(D3DXVec3LengthSq(&direction) > 0.0f){
+		D3DXVec3Normalize(&direction, &direction);
 	}
+	else{
+		direction = D3DXVECTOR3(0.0f, 0.0f, 1.0f);
+	}
+
+	float length(10.0f);
+	_owner->WalkTo(_owner->GetPosition() + direction * length);
+
+	//Œü‚«‡‚í‚¹
 
 
 }

@@ -112,6 +112,12 @@
     <Filter Include="ソース ファイル\Scene\Game\AI">
       <UniqueIdentifier>{8cefc281-2347-4bab-8b54-dfa2ebf2bab1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\AI_PATH">
+      <UniqueIdentifier>{071781b6-26e6-4413-b803-dd7a24c13b7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\AI_PATH">
+      <UniqueIdentifier>{24df518e-c7a8-459a-8ec3-6557f14af8ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -361,7 +367,10 @@
       <Filter>ソース ファイル\Scene\Game\AI</Filter>
     </ClCompile>
     <ClCompile Include="ai_path.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI</Filter>
+      <Filter>ソース ファイル\Scene\Game\AI_PATH</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_path_near_player.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI_PATH</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -615,7 +624,10 @@
       <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
     </ClInclude>
     <ClInclude Include="ai_path.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
+      <Filter>ヘッダー ファイル\Scene\Game\AI_PATH</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_path_near_player.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI_PATH</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

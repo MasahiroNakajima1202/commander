@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="actor_cursor.cpp" />
     <ClCompile Include="ai_path.cpp" />
+    <ClCompile Include="ai_path_near_player.cpp" />
     <ClCompile Include="battle_actor_ghost.cpp" />
     <ClCompile Include="battle_actor_state.cpp" />
     <ClCompile Include="attack.cpp" />
@@ -97,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor_cursor.h" />
+    <ClInclude Include="ai_path_near_player.h" />
     <ClInclude Include="battle_actor_ghost.h" />
     <ClInclude Include="battle_actor_state.h" />
     <ClInclude Include="attack.h" />

@@ -21,10 +21,10 @@
 #include "camera_director.h"
 #include "tile_field.h"
 
-#include "enemy_ai.h"
-#include "enemy_ai_attack_neighbor.h"
-#include "enemy_ai_wait.h"
-#include "enemy_ai_escape.h"
+#include "ai_state.h"
+#include "ai_state_attack_neighbor.h"
+#include "ai_state_wait.h"
+#include "ai_state_escape.h"
 
 #include "gimmick.h"
 #include "gimmick_ladder.h"
@@ -246,7 +246,7 @@ _popup(nullptr){
 	//ai test
 	//EnemyAIAttackNeighbor* enemy_ai(new EnemyAIAttackNeighbor(this, _renderer, _enemy_array[0], _player_array[0]));
 	//EnemyAIWait* enemy_ai(new EnemyAIWait(this, _renderer, _enemy_array[0]));
-	EnemyAIEscape* enemy_ai(new EnemyAIEscape(this, _renderer, _enemy_array[0]));
+	AIStateEscape* enemy_ai(new AIStateEscape(this, _renderer, _enemy_array[0]));
 	_enemy_ai_array[0] = enemy_ai;
 
 	_camera_director = new CameraDirector(_player_array[0], _camera);

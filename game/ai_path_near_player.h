@@ -18,12 +18,12 @@
 class BattleActor;
 class BattleObjectAccessor;
 class Renderer;
-class EnemyAI;
+class AIState;
 class AIPathNearPlayer : public AIPath{
 
 public:
 
-	AIPathNearPlayer(BattleObjectAccessor* accessor, Renderer* renderer, EnemyAI* from, EnemyAI* to, BattleActor* owner, int threshold, float range = 20.0f);
+	AIPathNearPlayer(BattleObjectAccessor* accessor, Renderer* renderer, AIState* from, AIState* to, BattleActor* owner, int threshold, float range = 20.0f);
 
 	virtual ~AIPathNearPlayer();
 

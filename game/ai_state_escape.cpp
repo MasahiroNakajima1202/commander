@@ -3,7 +3,7 @@
 //  author: íÜìáè´ç_
 //  update: 2016/06/30
 //*****************************************************************************
-#include "enemy_ai_escape.h"
+#include "ai_state_escape.h"
 #include "constant.h"
 #include "battle_object_accessor.h"
 #include "battle_actor.h"
@@ -13,17 +13,21 @@
 //*****************************************************************************
 
 
-EnemyAIEscape::EnemyAIEscape(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner):
-EnemyAI(accessor, renderer, owner){
+AIStateEscape::AIStateEscape(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner):
+AIState(accessor, renderer, owner){
 }
 
-EnemyAIEscape::~EnemyAIEscape(){
+AIStateEscape::~AIStateEscape(){
 	
 }
 
-void EnemyAIEscape::Update(void){
+void AIStateEscape::Update(void){
 	if(_accessor == nullptr){return;}
 	if(_owner == nullptr){return;}
+
+	if(AIState::CheckPath() != nullptr){
+		return;
+	}
 
 	//àÍî‘ãﬂÇ¢É^Å[ÉQÉbÉgÇÃçıìG
 	float min_length(1000000.0f);

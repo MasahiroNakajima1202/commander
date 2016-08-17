@@ -171,32 +171,32 @@ HRESULT Renderer::SetUp(HINSTANCE hInstance, HWND hWnd, BOOL bWindow){
 
 
 	//effekseer関連
-	_effekseer_renderer = nullptr;
-	_effekseer_manager = nullptr;
-	_effekseer_renderer = EffekseerRendererDX9::Renderer::Create(_device, EFFEKSEER_SPRITE_MAX);
-	_effekseer_manager = Effekseer::Manager::Create(EFFEKSEER_SPRITE_MAX);
+	//_effekseer_renderer = nullptr;
+	//_effekseer_manager = nullptr;
+	//_effekseer_renderer = EffekseerRendererDX9::Renderer::Create(_device, EFFEKSEER_SPRITE_MAX);
+	//_effekseer_manager = Effekseer::Manager::Create(EFFEKSEER_SPRITE_MAX);
 
 	// 描画方法の指定、独自に拡張しない限り定形文です。
-	_effekseer_manager->SetSpriteRenderer(_effekseer_renderer->CreateSpriteRenderer());
-	_effekseer_manager->SetRibbonRenderer(_effekseer_renderer->CreateRibbonRenderer());
-	_effekseer_manager->SetRingRenderer(_effekseer_renderer->CreateRingRenderer());
+	//_effekseer_manager->SetSpriteRenderer(_effekseer_renderer->CreateSpriteRenderer());
+	//_effekseer_manager->SetRibbonRenderer(_effekseer_renderer->CreateRibbonRenderer());
+	//_effekseer_manager->SetRingRenderer(_effekseer_renderer->CreateRingRenderer());
 	// テクスチャ画像の読込方法の指定(パッケージ等から読み込む場合拡張する必要があります。)
-	_effekseer_manager->SetTextureLoader(_effekseer_renderer->CreateTextureLoader() );
+	//_effekseer_manager->SetTextureLoader(_effekseer_renderer->CreateTextureLoader() );
 	// 座標系の指定(RHで右手系、LHで左手系)
-	_effekseer_manager->SetCoordinateSystem(Effekseer::CoordinateSystem::LH);
+	//_effekseer_manager->SetCoordinateSystem(Effekseer::CoordinateSystem::LH);
 
-	Effekseer::Matrix44 effekseer_proj;
-	Effekseer::Matrix44 effekseer_view;
-	for(int i = 0; i<16; i++){
-		int row(i/4), line(i%4);
-		effekseer_proj.Values[row][line] = _projection.m[row][line];
-	}
-	effekseer_view.Indentity();
+	//Effekseer::Matrix44 effekseer_proj;
+	//Effekseer::Matrix44 effekseer_view;
+	//for(int i = 0; i<16; i++){
+	//	int row(i/4), line(i%4);
+	//	effekseer_proj.Values[row][line] = _projection.m[row][line];
+	//}
+	//effekseer_view.Indentity();
 
 	// 投影行列の更新
-	_effekseer_renderer->SetProjectionMatrix(effekseer_proj);
+	//_effekseer_renderer->SetProjectionMatrix(effekseer_proj);
 	// カメラ行列の更新
-	_effekseer_renderer->SetCameraMatrix(effekseer_view);
+	//_effekseer_renderer->SetCameraMatrix(effekseer_view);
 
 	
 	return S_OK;
@@ -210,16 +210,16 @@ HRESULT Renderer::SetUp(HINSTANCE hInstance, HWND hWnd, BOOL bWindow){
 //*****************************************************************************
 void Renderer::Release(void){
 	//effekseer関連
-	if(_effekseer_manager != nullptr){
-		_effekseer_manager->StopAllEffects();
-		_effekseer_manager->Destroy();
-		_effekseer_manager = nullptr;
-	}
+	//if(_effekseer_manager != nullptr){
+	//	_effekseer_manager->StopAllEffects();
+	//	_effekseer_manager->Destroy();
+	//	_effekseer_manager = nullptr;
+	//}
 
-	if(_effekseer_renderer != nullptr){
-		_effekseer_renderer->Destory();
-		_effekseer_renderer = nullptr;
-	}
+	//if(_effekseer_renderer != nullptr){
+	//	_effekseer_renderer->Destory();
+	//	_effekseer_renderer = nullptr;
+	//}
 	
 	//テクスチャ解放
 	ReleaseAllTexture();
@@ -260,20 +260,20 @@ void Renderer::Release(void){
 void Renderer::Update(void){
 
 	//effekseerにviewを通知
-	Effekseer::Matrix44 effekseer_proj;
-	Effekseer::Matrix44 effekseer_view;
-	for(int i = 0; i<16; i++){
-		int row(i/4), line(i%4);
-		effekseer_view.Values[row][line] = _view.m[row][line];
-		effekseer_proj.Values[row][line] = _projection.m[row][line];
-	}
+	//Effekseer::Matrix44 effekseer_proj;
+	//Effekseer::Matrix44 effekseer_view;
+	//for(int i = 0; i<16; i++){
+	//	int row(i/4), line(i%4);
+	//	effekseer_view.Values[row][line] = _view.m[row][line];
+	//	effekseer_proj.Values[row][line] = _projection.m[row][line];
+	//}
 
 	// 投影行列の更新
-	_effekseer_renderer->SetProjectionMatrix(effekseer_proj);
+	//_effekseer_renderer->SetProjectionMatrix(effekseer_proj);
 	// カメラ行列の更新
-	_effekseer_renderer->SetCameraMatrix(effekseer_view);
+	//_effekseer_renderer->SetCameraMatrix(effekseer_view);
 
-	_effekseer_manager->Update(1.0f);
+	//_effekseer_manager->Update(1.0f);
 }
 
 //*****************************************************************************
@@ -301,10 +301,10 @@ void Renderer::Draw(bool swap, D3DCOLOR clear_color){
 			Object::DrawLayer(static_cast<Object::DRAW_LAYER>(i));
 		}
 
-		_effekseer_renderer->BeginRendering();
-		Object::DrawLayer(Object::DRAW_LAYER::DRAW_LAYER_EFFEKSEER);
+		//_effekseer_renderer->BeginRendering();
+		//Object::DrawLayer(Object::DRAW_LAYER::DRAW_LAYER_EFFEKSEER);
 		//_effekseer_manager->Draw();
-		_effekseer_renderer->EndRendering();
+		//_effekseer_renderer->EndRendering();
 		ResetSamplerState();
 
 		_cur_vs = def_vs;
@@ -339,9 +339,9 @@ void Renderer::DrawScreen(D3DCOLOR clear_color){
 		
 		_device->SetRenderState(D3DRS_ZENABLE, TRUE);						//Zバッファの設定
 
-		_effekseer_renderer->BeginRendering();
-		Object::DrawLayer(Object::DRAW_LAYER::DRAW_LAYER_EFFEKSEER_2D);
-		_effekseer_renderer->EndRendering();
+		//_effekseer_renderer->BeginRendering();
+		//Object::DrawLayer(Object::DRAW_LAYER::DRAW_LAYER_EFFEKSEER_2D);
+		//_effekseer_renderer->EndRendering();
 		ResetSamplerState();
 
 		_cur_vs = def_vs;

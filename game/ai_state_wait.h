@@ -1,14 +1,12 @@
 //*****************************************************************************
-//  ìGAIèÛë‘à⁄çsÉNÉâÉX
+//  ìGAI ë“ã@
 //  author: íÜìáè´ç_
-//  update: 2016/07/05
+//  update: 2016/06/30
 //*****************************************************************************
-#ifndef _AI_PATH_H_
-#define _AI_PATH_H_
+#ifndef _ENEMY_AI_WAIT_H_
+#define _ENEMY_AI_WAIT_H_
 
-#include "main.h"
-#include <d3dx9.h>
-
+#include "ai_state.h"
 //*****************************************************************************
 //  constant
 //*****************************************************************************
@@ -16,30 +14,17 @@
 //*****************************************************************************
 //  class
 //*****************************************************************************
-class BattleActor;
-class BattleObjectAccessor;
-class Renderer;
-class AIState;
-class AIPath{
-private:
-	AIPath(){}
+class AIStateWait : public AIState{
 public:
 
-	AIPath(BattleObjectAccessor* accessor, Renderer* renderer, AIState* from, AIState* to);
+	AIStateWait(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner);
 
-	virtual ~AIPath();
+	virtual ~AIStateWait();
 
 	virtual void Update(void);
 
-	virtual bool CheckToPassThrough(void) = 0;
-
 	//accessor
-	AIState* GetNext(void){return _to;}
 protected:
-	BattleObjectAccessor* _accessor;
-	Renderer* _renderer;
-	AIState* _from;
-	AIState* _to;
 };
 
 

@@ -7,7 +7,7 @@
 #include "battle_actor.h"
 #include "battle_object_accessor.h"
 	
-AIPathNearPlayer::AIPathNearPlayer(BattleObjectAccessor* accessor, Renderer* renderer, EnemyAI* from, EnemyAI* to, BattleActor* owner, int threshold, float range):
+AIPathNearPlayer::AIPathNearPlayer(BattleObjectAccessor* accessor, Renderer* renderer, AIState* from, AIState* to, BattleActor* owner, int threshold, float range):
 AIPath(accessor, renderer, from, to),
 _owner(owner),
 _threthold(threshold),

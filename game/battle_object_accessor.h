@@ -33,7 +33,7 @@ class ActorCursor;
 class BattleActorGhost;
 class CameraDirector;
 class Gimmick;
-class EnemyAI;
+class AIState;
 class BattleObjectAccessor{
 public:
 
@@ -81,7 +81,7 @@ protected:
 
 	BattleActor* _player_array[PLAYER_MAX];
 	BattleActor* _enemy_array[ENEMY_MAX];
-	EnemyAI* _enemy_ai_array[ENEMY_MAX];
+	AIState* _enemy_ai_array[ENEMY_MAX];
 
 	ActorCursor* _player_cursor_array[PLAYER_MAX];
 	BattleActorGhost* _player_ghost_array[PLAYER_MAX];

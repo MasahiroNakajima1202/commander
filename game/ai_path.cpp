@@ -6,7 +6,7 @@
 #include "ai_path.h"
 
 
-AIPath::AIPath(BattleObjectAccessor* accessor, Renderer* renderer, EnemyAI* from, EnemyAI* to):
+AIPath::AIPath(BattleObjectAccessor* accessor, Renderer* renderer, AIState* from, AIState* to):
 _accessor(accessor),
 _renderer(renderer),
 _from(from),

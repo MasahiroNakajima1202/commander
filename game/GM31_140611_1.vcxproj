@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -11,6 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="actor_ai.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="actor_cursor.cpp" />
     <ClCompile Include="ai_path.cpp" />
     <ClCompile Include="ai_path_near_player.cpp" />
@@ -44,10 +48,10 @@
     <ClCompile Include="damage_calculator.cpp" />
     <ClCompile Include="damage_popup.cpp" />
     <ClCompile Include="debug.cpp" />
-    <ClCompile Include="enemy_ai.cpp" />
-    <ClCompile Include="enemy_ai_attack_neighbor.cpp" />
-    <ClCompile Include="enemy_ai_escape.cpp" />
-    <ClCompile Include="enemy_ai_wait.cpp" />
+    <ClCompile Include="ai_state.cpp" />
+    <ClCompile Include="ai_state_attack_neighbor.cpp" />
+    <ClCompile Include="ai_state_escape.cpp" />
+    <ClCompile Include="ai_state_wait.cpp" />
     <ClCompile Include="fade.cpp" />
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="battle_object_accessor.cpp" />
@@ -97,6 +101,7 @@
     <ClCompile Include="vs_toon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="actor_ai.h" />
     <ClInclude Include="actor_cursor.h" />
     <ClInclude Include="ai_path_near_player.h" />
     <ClInclude Include="battle_actor_ghost.h" />
@@ -130,11 +135,11 @@
     <ClInclude Include="damage_calculator.h" />
     <ClInclude Include="damage_popup.h" />
     <ClInclude Include="debug.h" />
-    <ClInclude Include="enemy_ai.h" />
-    <ClInclude Include="enemy_ai_attack_neighbor.h" />
-    <ClInclude Include="enemy_ai_escape.h" />
+    <ClInclude Include="ai_state.h" />
+    <ClInclude Include="ai_state_attack_neighbor.h" />
+    <ClInclude Include="ai_state_escape.h" />
     <ClInclude Include="ai_path.h" />
-    <ClInclude Include="enemy_ai_wait.h" />
+    <ClInclude Include="ai_state_wait.h" />
     <ClInclude Include="fade.h" />
     <ClInclude Include="battle.h" />
     <ClInclude Include="battle_object_accessor.h" />
@@ -199,14 +204,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">

@@ -55,9 +55,10 @@ bool HitCube::InnerHitCheck(HitSphere* sphere){
 	D3DXVec3TransformCoord(&sphere_position, &sphere_position, &world_inv);
 
 	//Še•ûŒü‚Ì‚Í‚İo‚µ‹——£‚ğ‘ª’è
-	float x_out( max(0.0f, abs(sphere_position.x) - _size.x * 0.5f) );
-	float y_out( max(0.0f, abs(sphere_position.y) - _size.y * 0.5f) );
-	float z_out( max(0.0f, abs(sphere_position.z) - _size.z * 0.5f) );
+	
+	float x_out( max(0.0f, fabsf(sphere_position.x) - _size.x * 0.5f) );
+	float y_out( max(0.0f, fabsf(sphere_position.y) - _size.y * 0.5f) );
+	float z_out( max(0.0f, fabsf(sphere_position.z) - _size.z * 0.5f) );
 
 	//‚Í‚İo‚µ‚Ì’·‚³‚ğ‘ª’è
 	D3DXVECTOR3 ext(x_out, y_out, z_out);

@@ -11,13 +11,14 @@
 #include "object.h"
 #include "camera.h"
 
+
 #include <d3dx9.h>
 #define DIRECTINPUT_VERSION (0x0800)			//警告つぶし
 #include "dinput.h"
 
 //effekseer関連
-#include <Effekseer.h>
-#include <EffekseerRendererDX9.h>
+//#include <Effekseer.h>
+//#include <EffekseerRendererDX9.h>
 
 //#define FVF_VERTEX_2D (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)	//2Dテクスチャ設定
 //#define	FVF_VERTEX_3D	(D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE | D3DFVF_TEX1)
@@ -247,8 +248,8 @@ public:
 
 	//accessor
 	LPDIRECT3DDEVICE9 GetDevice(void){return _device;}
-	Effekseer::Manager* GetEffekseerManager(void){return _effekseer_manager;}
-	EffekseerRenderer::Renderer* GetEffekseerRenderer(void){return _effekseer_renderer;}
+	//Effekseer::Manager* GetEffekseerManager(void){return _effekseer_manager;}
+	//EffekseerRenderer::Renderer* GetEffekseerRenderer(void){return _effekseer_renderer;}
 private:
 	int SearchFreeLightIndex(void);
 
@@ -282,8 +283,8 @@ private:
 	PixelShader* _rendering_ps[Object::DRAW_LAYER_MAX];
 
 	static const int EFFEKSEER_SPRITE_MAX = 256;
-	EffekseerRenderer::Renderer* _effekseer_renderer;
-	Effekseer::Manager* _effekseer_manager;
+	//EffekseerRenderer::Renderer* _effekseer_renderer;
+	//Effekseer::Manager* _effekseer_manager;
 
 	void ResetSamplerState(void);
 };

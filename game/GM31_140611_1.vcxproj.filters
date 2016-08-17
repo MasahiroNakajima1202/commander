@@ -112,11 +112,17 @@
     <Filter Include="ソース ファイル\Scene\Game\AI">
       <UniqueIdentifier>{8cefc281-2347-4bab-8b54-dfa2ebf2bab1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Scene\Game\AI_PATH">
+    <Filter Include="ソース ファイル\Scene\Game\AI\Node">
+      <UniqueIdentifier>{af9229a1-5a88-44d0-af45-b2fc9566d3ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\AI\Path">
       <UniqueIdentifier>{071781b6-26e6-4413-b803-dd7a24c13b7d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル\Scene\Game\AI_PATH">
+    <Filter Include="ヘッダー ファイル\Scene\Game\AI\Path">
       <UniqueIdentifier>{24df518e-c7a8-459a-8ec3-6557f14af8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\AI\Node">
+      <UniqueIdentifier>{6c63fbe6-a0b4-4c4f-896c-a9c500f791e4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -354,23 +360,26 @@
     <ClCompile Include="hit_checker_actor_gimmick.cpp">
       <Filter>ソース ファイル\Scene\Game\Judge</Filter>
     </ClCompile>
-    <ClCompile Include="enemy_ai.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI</Filter>
-    </ClCompile>
-    <ClCompile Include="enemy_ai_attack_neighbor.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI</Filter>
-    </ClCompile>
-    <ClCompile Include="enemy_ai_wait.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI</Filter>
-    </ClCompile>
-    <ClCompile Include="enemy_ai_escape.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI</Filter>
-    </ClCompile>
     <ClCompile Include="ai_path.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI_PATH</Filter>
+      <Filter>ソース ファイル\Scene\Game\AI\Path</Filter>
     </ClCompile>
     <ClCompile Include="ai_path_near_player.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI_PATH</Filter>
+      <Filter>ソース ファイル\Scene\Game\AI\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="actor_ai.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_state.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_state_attack_neighbor.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_state_escape.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_state_wait.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -611,23 +620,26 @@
     <ClInclude Include="hit_checker_actor_gimmick.h">
       <Filter>ヘッダー ファイル\Scene\Game\Judge</Filter>
     </ClInclude>
-    <ClInclude Include="enemy_ai.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy_ai_attack_neighbor.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy_ai_wait.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy_ai_escape.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
-    </ClInclude>
     <ClInclude Include="ai_path.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI_PATH</Filter>
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Path</Filter>
     </ClInclude>
     <ClInclude Include="ai_path_near_player.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI_PATH</Filter>
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="actor_ai.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_state.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_state_attack_neighbor.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_state_escape.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_state_wait.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

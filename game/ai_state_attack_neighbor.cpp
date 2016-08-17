@@ -3,7 +3,7 @@
 //  author: ’†“‡«_
 //  update: 2016/04/11
 //*****************************************************************************
-#include "enemy_ai_attack_neighbor.h"
+#include "ai_state_attack_neighbor.h"
 #include "constant.h"
 #include "battle_object_accessor.h"
 #include "battle_actor.h"
@@ -15,21 +15,24 @@
 //*****************************************************************************
 
 
-EnemyAIAttackNeighbor::EnemyAIAttackNeighbor(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner, BattleActor* target):
-EnemyAI(accessor, renderer, owner),
+AIStateAttackNeighbor::AIStateAttackNeighbor(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner, BattleActor* target):
+AIState(accessor, renderer, owner),
 _target(target){
 }
 
-EnemyAIAttackNeighbor::~EnemyAIAttackNeighbor(){
+AIStateAttackNeighbor::~AIStateAttackNeighbor(){
 	
 }
 
-void EnemyAIAttackNeighbor::Update(void){
+void AIStateAttackNeighbor::Update(void){
 	if(_accessor == nullptr){return;}
 	if(_owner == nullptr){return;}
 
 	if(_target == nullptr){return;}
 
+	if(AIState::CheckPath()){
+		return;
+	}
 	
 	D3DXVECTOR3 to_target(_target->GetPosition() - _owner->GetPosition());
 	float length(D3DXVec3Length(&to_target));

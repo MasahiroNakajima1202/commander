@@ -6,7 +6,7 @@
 #ifndef _ENEMY_AI_ESCAPE_H_
 #define _ENEMY_AI_ESCAPE_H_
 
-#include "enemy_ai.h"
+#include "ai_state.h"
 //*****************************************************************************
 //  constant
 //*****************************************************************************
@@ -14,12 +14,12 @@
 //*****************************************************************************
 //  class
 //*****************************************************************************
-class EnemyAIEscape : public EnemyAI{
+class AIStateEscape : public AIState{
 public:
 
-	EnemyAIEscape(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner);
+	AIStateEscape(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner);
 
-	virtual ~EnemyAIEscape();
+	virtual ~AIStateEscape();
 
 	virtual void Update(void);
 

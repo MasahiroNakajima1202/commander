@@ -21,10 +21,12 @@
 #include "camera_director.h"
 #include "tile_field.h"
 
+#include "actor_ai.h"
 #include "ai_state.h"
 #include "ai_state_attack_neighbor.h"
 #include "ai_state_wait.h"
 #include "ai_state_escape.h"
+#include "ai_path_near_player.h"
 
 #include "gimmick.h"
 #include "gimmick_ladder.h"
@@ -36,27 +38,26 @@
 //  class
 //*****************************************************************************
 
-BattleObjectAccessor::BattleObjectAccessor(Renderer* renderer):
-_renderer(renderer),
-_camera(nullptr),
-_model_field(nullptr),
-_mouse_cursor(nullptr),
-_cursor3d(nullptr),
-_cursor_director(nullptr),
-_attack_accessor(nullptr),
-_end_demo(nullptr),
-_camera_director(nullptr),
-_popup(nullptr){
-	for(int i = 0; i<PLAYER_MAX; i++){
+BattleObjectAccessor::BattleObjectAccessor(Renderer* renderer) :
+	_renderer(renderer),
+	_camera(nullptr),
+	_model_field(nullptr),
+	_mouse_cursor(nullptr),
+	_cursor3d(nullptr),
+	_cursor_director(nullptr),
+	_attack_accessor(nullptr),
+	_end_demo(nullptr),
+	_camera_director(nullptr),
+	_popup(nullptr) {
+	for (int i = 0; i < PLAYER_MAX; i++) {
 		_player_array[i] = nullptr;
 		_player_cursor_array[i] = nullptr;
 		_player_ghost_array[i] = nullptr;
 	}
-	for(int i = 0; i<ENEMY_MAX; i++){
+	for (int i = 0; i < ENEMY_MAX; i++) {
 		_enemy_array[i] = nullptr;
-		_enemy_ai_array[i] = nullptr;
 	}
-	for(int i = 0; i<GIMMICK_MAX; i++){
+	for (int i = 0; i < GIMMICK_MAX; i++) {
 		_gimmick_array[i] = nullptr;
 	}
 
@@ -102,8 +103,8 @@ _popup(nullptr){
 		 0,  0,  0,  0,  0,  0,  0, 12, 12, 12, 12, 12, 12, 12, 12,  6,  6,  6, 10, 10, 10, 10, 10, 10, 10, 22, 22, 16, 16, 16, 16, 16, //14
 		 0,  0,  0,  0,  0,  0,  0, 12, 12, 12, 12, 12, 12, 12, 12,  6,  6,  6, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, //15
 	};
-	for(int i = 0; i<32; i++){
-		for(int j = 0; j<32; j++){
+	for (int i = 0; i < 32; i++) {
+		for (int j = 0; j < 32; j++) {
 			field->StackTile(j, i, height_map[31 - i][j]);
 		}
 	}
@@ -143,7 +144,7 @@ _popup(nullptr){
 		D3DX_PI * 0.75f,
 	};
 
-	for(int i = 0; i<player_num; i++){
+	for (int i = 0; i < player_num; i++) {
 		BattleActor::PARAMETER parameter(100, 100, 50, 5);
 		_player_array[i] = new BattleActor(_renderer, parameter, player_filename);
 		_player_cursor_array[i] = new ActorCursor(_renderer, _player_array[i]);
@@ -177,7 +178,7 @@ _popup(nullptr){
 		D3DXVECTOR3(-210.0f, 0.0f, 260.0f),
 		D3DXVECTOR3(-210.0f, 0.0f, 290.0f),
 		//‚‘ä”Ô•º
-		D3DXVECTOR3( 90.0f, 0.0f, 90.0f),
+		D3DXVECTOR3(90.0f, 0.0f, 90.0f),
 		D3DXVECTOR3(110.0f, 0.0f, 90.0f),
 		D3DXVECTOR3(130.0f, 0.0f, 90.0f),
 		//–‘²
@@ -222,7 +223,7 @@ _popup(nullptr){
 		D3DX_PI * 0.5f,
 		D3DX_PI * 0.5f,
 	};
-	for(int i = 0; i<enemy_num; i++){
+	for (int i = 0; i < enemy_num; i++) {
 		BattleActor::PARAMETER parameter(100, 100, 50, 5);
 		_enemy_array[i] = new BattleActor(_renderer, parameter, enemy_filename);
 
@@ -244,10 +245,13 @@ _popup(nullptr){
 	_gimmick_array[8] = new GimmickLadder(_renderer, D3DXVECTOR3(220.0f, 80.0f, -280.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f), 6);
 
 	//ai test
+	ActorAI* enemy_ai(new ActorAI(this, _renderer, _enemy_array[0]));
 	//EnemyAIAttackNeighbor* enemy_ai(new EnemyAIAttackNeighbor(this, _renderer, _enemy_array[0], _player_array[0]));
 	//EnemyAIWait* enemy_ai(new EnemyAIWait(this, _renderer, _enemy_array[0]));
-	AIStateEscape* enemy_ai(new AIStateEscape(this, _renderer, _enemy_array[0]));
-	_enemy_ai_array[0] = enemy_ai;
+	AIStateEscape* ai_state(new AIStateEscape(this, _renderer, _enemy_array[0]));
+	enemy_ai->AddState(ai_state);
+	enemy_ai->SetCurrentState(ai_state);
+	_enemy_array[0]->SetAI(enemy_ai);
 
 	_camera_director = new CameraDirector(_player_array[0], _camera);
 
@@ -309,14 +313,9 @@ BattleObjectAccessor::~BattleObjectAccessor(){
 		}
 	}
 	for(int i = 0; i<ENEMY_MAX; i++){
-		if(_enemy_array[i] != nullptr){
+		if (_enemy_array[i] != nullptr) {
 			delete _enemy_array[i];
 			_enemy_array[i] = nullptr;
-		}
-
-		if(_enemy_ai_array[i] != nullptr){
-			delete _enemy_ai_array[i];
-			_enemy_ai_array[i] = nullptr;
 		}
 	}
 	for(int i = 0; i<GIMMICK_MAX; i++){
@@ -391,11 +390,6 @@ void BattleObjectAccessor::UpdateAll(void){
 
 	_camera_director->Update();
 
-	for(int i = 0; i<ENEMY_MAX; i++){
-		if(_enemy_ai_array[i] != nullptr){
-			_enemy_ai_array[i]->Update();
-		}
-	}
 }
 
 int BattleObjectAccessor::GetPlayerCount(void){

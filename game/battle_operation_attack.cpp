@@ -41,7 +41,7 @@ void BattleOperationAttack::Update(void){
 		//ˆÚ“®–½—ß
 		D3DXVECTOR3 direction(to_target);
 		D3DXVec3Normalize(&direction, &direction);
-		float length(sqrt(sq_length) - RANGE);
+		float length(sqrtf(sq_length) - RANGE);
 		D3DXVECTOR3 dest_position(owner_position + direction * length);
 		_owner->SetAction(new BattleActionWalk(_owner, dest_position));
 		return;

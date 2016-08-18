@@ -214,7 +214,7 @@ void BattleCommanderStateDirection::SetGhostAsMovement(void){
 			D3DXVec3Normalize(&direction, &direction);
 		}
 		D3DXVECTOR3 rotation(0.0f, 0.0f, 0.0f);
-		rotation.y = atan2(direction.x, direction.z);
+		rotation.y = atan2f(direction.x, direction.z);
 		ghost->SetRotation(rotation);
 
 		//play animation

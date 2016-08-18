@@ -33,7 +33,7 @@ void BattleActionWalk::Update(void){
 
 	//‚í‚¸‚©‚·‚¬‚éˆÚ“®‚Å‚ÍŒü‚«‚ð•Ï‚¦‚È‚¢
 	if(D3DXVec3Dot(&direction, &direction) > 1.0f * 1.0f){
-		float angle(atan2(direction.x, direction.z));
+		float angle(atan2f(direction.x, direction.z));
 		PiSectionFix(&angle, &angle);
 
 		D3DXVECTOR3 rotation(_owner->GetRotation());

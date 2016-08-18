@@ -34,6 +34,10 @@ ActorAI::~ActorAI() {
 }
 
 void ActorAI::Update(void) {
+	if (_current_state != nullptr){
+		_current_state->Update();
+	}
+
 #pragma region state switching
 	if (_current_state != nullptr) {
 		AIState* next(_current_state->CheckPath());

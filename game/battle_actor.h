@@ -25,7 +25,7 @@ class Hit;
 class BattleSkill;
 class BattleOperation;
 class BattleActorState;
-class AIState;
+class ActorAI;
 class BattleActor{
 public:
 	struct PARAMETER{
@@ -103,7 +103,8 @@ public:
 	void SetRotation(D3DXVECTOR3 value){_dest_rotation = _rotation = value;}
 	D3DXVECTOR3 GetRotation(void){return _rotation;}
 	D3DXVECTOR3 GetDestRotation(void){return _dest_rotation;}
-	void SetCurrentAI(AIState* ai);
+	ActorAI* GetAI(void) { return _ai; }
+	void SetAI(ActorAI* value) { _ai = value; }
 private:
 	static const float DEFAULT_WALK_ACCEL;
 	static const float NATURAL_SPEED_DOWN;
@@ -125,9 +126,7 @@ private:
 
 	Hit* _hit;
 
-	static const int AI_MAX = 32;
-	AIState* _ai_array[AI_MAX];
-	AIState* _current_ai;
+	ActorAI* _ai;
 
 	struct ATTACK_REJECTION{
 		int attack_id;

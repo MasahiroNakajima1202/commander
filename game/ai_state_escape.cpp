@@ -49,7 +49,7 @@ void AIStateEscape::Update(void){
 		}
 	}
 
-	min_length = sqrt(min_length);
+	min_length = sqrtf(min_length);
 
 	const float SEARCH_RANGE(200.0f);
 	if(target_player == nullptr){return;}

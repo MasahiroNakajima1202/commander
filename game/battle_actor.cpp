@@ -22,6 +22,8 @@
 #include "battle_actor_state_idle.h"
 #include "battle_actor_state_walk.h"
 #include "battle_actor_state_dead.h"
+
+#include "actor_ai.h"
 //*****************************************************************************
 //  constant
 //*****************************************************************************
@@ -45,7 +47,7 @@ _operation(nullptr),
 _hit(nullptr),
 _cur_state(nullptr),
 _parameter(parameter),
-_current_ai(nullptr){
+_ai(nullptr){
 	SkinMesh *obj(new SkinMesh(renderer));
 	obj->LoadModelFile(image_filename);
 	obj->PlayAnimation(0);
@@ -59,11 +61,6 @@ _current_ai(nullptr){
 	_state_array[STATE::DEAD] = new BattleActorStateDead(this);
 
 	_cur_state = _state_array[STATE::IDLE];
-
-	for(int i = 0; i < AI_MAX; i++)
-	{
-		_ai_array[i] = nullptr;
-	}
 }
 
 BattleActor::~BattleActor(){
@@ -98,6 +95,11 @@ BattleActor::~BattleActor(){
 			_state_array[i] = nullptr;
 		}
 	}
+
+	if (_ai != nullptr) {
+		delete _ai;
+		_ai = nullptr;
+	}
 }
 
 void BattleActor::Update(void){
@@ -116,6 +118,10 @@ void BattleActor::Update(void){
 	omega *= 0.1f;
 	_rotation += omega;
 	PiSectionFix(&_rotation, &_rotation);
+	
+	if (_ai != nullptr) {
+		_ai->Update();
+	}
 
 	_cur_state->Update();
 
@@ -354,24 +360,5 @@ void BattleActor::UpdateRejection(void){
 		else{
 			_rejection[i].rest_time--;
 		}
-	}
-}
-
-void BattleActor::SetCurrentAI(AIState* ai){
-	if(ai == nullptr){
-		_current_ai = ai;
-		return;
-	}
-
-	//©•ª‚Ì‚¿•¨‚Æ‚µ‚Ä“o˜^‚³‚ê‚Ä‚¢‚é‚à‚Ì‚¾‚¯‚ğİ’è
-	bool exist(false);
-	for(int i = 0; i < AI_MAX; i++){
-		if(_ai_array[i] == nullptr){continue;}
-
-		exist |= _ai_array[i] == ai;
-	}
-
-	if(exist){
-		_current_ai = ai;
 	}
 }

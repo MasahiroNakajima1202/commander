@@ -381,6 +381,9 @@
     <ClCompile Include="ai_state_wait.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
     </ClCompile>
+    <ClCompile Include="ai_path_weaken.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Path</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -640,6 +643,9 @@
     </ClInclude>
     <ClInclude Include="ai_state_wait.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_path_weaken.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Path</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

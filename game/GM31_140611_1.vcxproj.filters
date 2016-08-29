@@ -372,15 +372,6 @@
     <ClCompile Include="ai_state.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
     </ClCompile>
-    <ClCompile Include="ai_state_attack_neighbor.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
-    </ClCompile>
-    <ClCompile Include="ai_state_escape.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
-    </ClCompile>
-    <ClCompile Include="ai_state_wait.cpp">
-      <Filter>ソース ファイル\Scene\Game\AI\Node</Filter>
-    </ClCompile>
     <ClCompile Include="ai_path_weaken.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Path</Filter>
     </ClCompile>
@@ -633,15 +624,6 @@
       <Filter>ヘッダー ファイル\Scene\Game\AI</Filter>
     </ClInclude>
     <ClInclude Include="ai_state.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="ai_state_attack_neighbor.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="ai_state_escape.h">
-      <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="ai_state_wait.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI\Node</Filter>
     </ClInclude>
     <ClInclude Include="ai_path_weaken.h">

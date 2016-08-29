@@ -22,28 +22,40 @@ class Renderer;
 class AIPath;
 class AIState{
 private:
-	AIState(){}
+	AIState():X_POINT_NUM(1),Y_POINT_NUM(1),Z_POINT_NUM(1){}
 public:
 
-	AIState(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner);
+	AIState(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner, int x_num, int y_num, int z_num = 1);
 
 	virtual ~AIState();
 
-	virtual void Update(void) = 0;
+	virtual void Update(void);
 
-	AIState* CheckPath(void);
 	//accessor
 protected:
-
-
 	BattleObjectAccessor* _accessor;
 	BattleActor* _owner;
 	Renderer* _renderer;
 
-	static const int PATH_MAX = 1;
-	AIPath* _path_array[PATH_MAX];
+	struct POINT {
+		D3DXVECTOR3 position;
+		float value;
+		//D3DCOLOR debug_color;
+		bool enable;
+
+		POINT():
+		position(0.0f, 0.0f, 0.0f),
+		value(0.0f),
+		enable(false){}
+	};
+	const int X_POINT_NUM;
+	const int Y_POINT_NUM;
+	const int Z_POINT_NUM;
+	POINT* _point_table;
+
+	D3DXVECTOR3 _target_position;
 };
 
-
+// TODO: フィルタクラス、評価関数クラス、カーブの作成
 
 #endif//_NUMBER_H_

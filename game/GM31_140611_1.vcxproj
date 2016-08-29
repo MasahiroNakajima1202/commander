@@ -50,9 +50,6 @@
     <ClCompile Include="damage_popup.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="ai_state.cpp" />
-    <ClCompile Include="ai_state_attack_neighbor.cpp" />
-    <ClCompile Include="ai_state_escape.cpp" />
-    <ClCompile Include="ai_state_wait.cpp" />
     <ClCompile Include="fade.cpp" />
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="battle_object_accessor.cpp" />
@@ -138,10 +135,7 @@
     <ClInclude Include="damage_popup.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="ai_state.h" />
-    <ClInclude Include="ai_state_attack_neighbor.h" />
-    <ClInclude Include="ai_state_escape.h" />
     <ClInclude Include="ai_path.h" />
-    <ClInclude Include="ai_state_wait.h" />
     <ClInclude Include="fade.h" />
     <ClInclude Include="battle.h" />
     <ClInclude Include="battle_object_accessor.h" />

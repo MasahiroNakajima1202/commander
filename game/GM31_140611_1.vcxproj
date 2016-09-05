@@ -16,6 +16,7 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="actor_cursor.cpp" />
+    <ClCompile Include="ai_filter.cpp" />
     <ClCompile Include="ai_path.cpp" />
     <ClCompile Include="ai_path_near_player.cpp" />
     <ClCompile Include="ai_path_weaken.cpp" />
@@ -101,6 +102,7 @@
   <ItemGroup>
     <ClInclude Include="actor_ai.h" />
     <ClInclude Include="actor_cursor.h" />
+    <ClInclude Include="ai_filter.h" />
     <ClInclude Include="ai_path_near_player.h" />
     <ClInclude Include="ai_path_weaken.h" />
     <ClInclude Include="battle_actor_ghost.h" />

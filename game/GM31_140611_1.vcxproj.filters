@@ -124,6 +124,12 @@
     <Filter Include="ヘッダー ファイル\Scene\Game\AI\Node">
       <UniqueIdentifier>{6c63fbe6-a0b4-4c4f-896c-a9c500f791e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\AI\Filter">
+      <UniqueIdentifier>{b1f0f3e1-a82c-4075-aee8-3f53b2fdf549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\AI\Filter">
+      <UniqueIdentifier>{be82e38a-e296-49d1-9c85-ebc4b16a2476}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -374,6 +380,9 @@
     </ClCompile>
     <ClCompile Include="ai_path_weaken.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_filter.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Filter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -628,6 +637,9 @@
     </ClInclude>
     <ClInclude Include="ai_path_weaken.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_filter.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Filter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

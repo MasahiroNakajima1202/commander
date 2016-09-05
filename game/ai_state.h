@@ -20,6 +20,8 @@ class BattleActor;
 class BattleObjectAccessor;
 class Renderer;
 class AIPath;
+class AIFilter;
+
 class AIState{
 private:
 	AIState():X_POINT_NUM(1),Y_POINT_NUM(1),Z_POINT_NUM(1){}
@@ -31,31 +33,35 @@ public:
 
 	virtual void Update(void);
 
-	//accessor
-protected:
-	BattleObjectAccessor* _accessor;
-	BattleActor* _owner;
-	Renderer* _renderer;
-
 	struct POINT {
 		D3DXVECTOR3 position;
 		float value;
 		//D3DCOLOR debug_color;
 		bool enable;
 
-		POINT():
-		position(0.0f, 0.0f, 0.0f),
-		value(0.0f),
-		enable(false){}
+		POINT() :
+			position(0.0f, 0.0f, 0.0f),
+			value(0.0f),
+			enable(false) {}
 	};
+
+	//accessor
+protected:
+	BattleObjectAccessor* _accessor;
+	BattleActor* _owner;
+	Renderer* _renderer;
+
+	
 	const int X_POINT_NUM;
 	const int Y_POINT_NUM;
 	const int Z_POINT_NUM;
 	POINT* _point_table;
 
 	D3DXVECTOR3 _target_position;
+
+	AIFilter* _filter_list;
 };
 
-// TODO: フィルタクラス、評価関数クラス、カーブの作成
+// TODO: 点列生成クラス、評価関数クラス、カーブの作成
 
 #endif//_NUMBER_H_

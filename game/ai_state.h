@@ -21,13 +21,13 @@ class BattleObjectAccessor;
 class Renderer;
 class AIPath;
 class AIFilter;
-
+class AIGenerator;
 class AIState{
 private:
-	AIState():X_POINT_NUM(1),Y_POINT_NUM(1),Z_POINT_NUM(1){}
+	AIState(){}
 public:
 
-	AIState(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner, int x_num, int y_num, int z_num = 1);
+	AIState(BattleObjectAccessor* accessor, Renderer* renderer, BattleActor* owner);
 
 	virtual ~AIState();
 
@@ -46,22 +46,19 @@ public:
 	};
 
 	//accessor
+	void SetGenerator(AIGenerator* value) { _generator = value; }
+	//void AddFilter(AIFilter* value);
 protected:
 	BattleObjectAccessor* _accessor;
 	BattleActor* _owner;
 	Renderer* _renderer;
 
-	
-	const int X_POINT_NUM;
-	const int Y_POINT_NUM;
-	const int Z_POINT_NUM;
-	POINT* _point_table;
-
 	D3DXVECTOR3 _target_position;
 
+	AIGenerator* _generator;
 	AIFilter* _filter_list;
 };
 
-// TODO: 点列生成クラス、評価関数クラス、カーブの作成
+// TODO: 点列生成クラスのalignment関数の実装、評価関数クラス、カーブの作成
 
 #endif//_NUMBER_H_

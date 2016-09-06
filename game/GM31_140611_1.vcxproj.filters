@@ -130,6 +130,12 @@
     <Filter Include="ソース ファイル\Scene\Game\AI\Filter">
       <UniqueIdentifier>{be82e38a-e296-49d1-9c85-ebc4b16a2476}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\AI\Generator">
+      <UniqueIdentifier>{3f3a63bc-2bce-444c-bb21-14b6d8c9e90d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\AI\Generator">
+      <UniqueIdentifier>{526ef8f2-d172-4236-a6b6-b149ae18201a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -383,6 +389,9 @@
     </ClCompile>
     <ClCompile Include="ai_filter.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_generator.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Generator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -640,6 +649,9 @@
     </ClInclude>
     <ClInclude Include="ai_filter.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_generator.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Generator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

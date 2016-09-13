@@ -81,7 +81,7 @@ void GuideArrow::CommitImage(void){
 	D3DXVECTOR3 line_center(_begin + direction * (line_length * 0.5f));
 	D3DXVECTOR3 arrow_center(_begin + direction * (line_length + arrow_length * 0.5f));
 
-	D3DXVECTOR3 rotation(D3DX_PI * 0.5f, 0.0f, -atan2(direction.x, direction.z));
+	D3DXVECTOR3 rotation(D3DX_PI * 0.5f, 0.0f, -atan2f(direction.x, direction.z));
 
 	line_center.y += 1.0f;
 	arrow_center.y += 1.0f;

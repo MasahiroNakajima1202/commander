@@ -243,6 +243,9 @@ BattleObjectAccessor::BattleObjectAccessor(Renderer* renderer) :
 
 	//ai test
 	ActorAI* enemy_ai(new ActorAI(this, _renderer, _enemy_array[0]));
+	AIState* ai_state(new AIState(this, _renderer, _enemy_array[0]));
+	enemy_ai->AddState(ai_state);
+	enemy_ai->SetCurrentState(ai_state);
 	_enemy_array[0]->SetAI(enemy_ai);
 
 	_camera_director = new CameraDirector(_player_array[0], _camera);

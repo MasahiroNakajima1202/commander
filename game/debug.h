@@ -14,7 +14,7 @@
 //*****************************************************************************
 //  constant
 //*****************************************************************************
-//#define _DEBUG_HIT_DRAW_
+#define _DEBUG_HIT_DRAW_
 
 //*****************************************************************************
 //  class
@@ -35,7 +35,7 @@ public:
 	//  あとかたづけ
 	//  引数: なし
 	//*****************************************************************************
-	virtual ~Debug(){Release();}
+	virtual ~Debug(){}
 
 	//*****************************************************************************
 	//【初期化】
@@ -68,9 +68,8 @@ public:
 	static void Draw(void);
 
 	//accessor
-	static void SetRenderer(Renderer *renderer){Debug::renderer = renderer;}
+	static void SetRenderer(Renderer *renderer){Debug::_renderer = renderer;}
 
-	static void SetCameraView(D3DXMATRIX *value){camera_view = *value;}
 	static void EntryHitView(D3DXVECTOR3 pos, float radius);
 
 
@@ -80,12 +79,11 @@ private:
 
 	static const int BUFFER_MAX = 1024;
 
-	static Renderer *renderer;
-	static char buffer[BUFFER_MAX];
-	static LPD3DXFONT font;					// フォントへのポインタ
+	static Renderer *_renderer;
+	static char _buffer[BUFFER_MAX];
+	static LPD3DXFONT _font;					// フォントへのポインタ
 
-	static LPDIRECT3DVERTEXBUFFER9 vtx;			//頂点バッファのポインタ
-	static int texture_index;
+	static int _mesh_id;			//頂点バッファのポインタ
 
 	struct HIT_VIEW{
 		D3DXVECTOR3 position;
@@ -94,9 +92,7 @@ private:
 	};
 
 	static const int HIT_VIEW_MAX = 128;
-	static HIT_VIEW hit_view[HIT_VIEW_MAX];
-	static D3DXMATRIX camera_view;
-
+	static HIT_VIEW _hit_view[HIT_VIEW_MAX];
 
 };
 

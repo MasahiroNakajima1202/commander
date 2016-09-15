@@ -7,6 +7,8 @@
 #include "ai_state.h"
 #include "battle_actor.h"
 
+#include "debug.h"
+
 AIGenerator::AIGenerator(BattleObjectAccessor* accessor, BattleActor* owner, int x_num, int y_num, int z_num, float x_padding, float y_padding, float z_padding) :
 	_accessor(accessor),
 	_owner(owner),
@@ -38,6 +40,8 @@ void AIGenerator::AlignmentPoints(void) {
 	init_position.y -= (float)(Y_POINT_NUM - 1) * 0.5f * Y_PADDING;
 	init_position.z -= (float)(Z_POINT_NUM - 1) * 0.5f * Z_PADDING;
 	D3DXVECTOR3 position(init_position);
+
+	Debug::EntryHitView(_owner->GetPosition(), 10.0f);
 
 	for (int k = 0; k < Z_POINT_NUM; k++){
 		position.y = init_position.y;

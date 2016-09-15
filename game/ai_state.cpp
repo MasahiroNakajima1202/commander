@@ -39,6 +39,7 @@ void AIState::Update(void) {
 	AIFilter* cur_filter(_filter_list);
 	while (cur_filter != nullptr) {
 		cur_filter->Apply(point_table, length);
+		cur_filter = cur_filter->GetNextFilter();
 	}
 
 	//scoring phase

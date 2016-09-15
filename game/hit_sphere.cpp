@@ -19,7 +19,7 @@ _radius(radius){
 		image->SetWireFrameFlag(true);
 		image->SetPosition(position);
 
-		_debug_image = image;
+		//_debug_image = image;
 	}
 #endif
 }

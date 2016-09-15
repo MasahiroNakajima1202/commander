@@ -24,6 +24,8 @@
 #include "battle_actor_state_dead.h"
 
 #include "actor_ai.h"
+
+#include "debug.h"
 //*****************************************************************************
 //  constant
 //*****************************************************************************
@@ -146,6 +148,8 @@ void BattleActor::Update(void){
 		position.y += ((HitSphere*)_hit)->GetRadius() * 0.5f;
 		_hit->SetPosition(position);
 	}
+
+	Debug::EntryHitView(_position, 10.0f);
 }
 
 void BattleActor::Accel(D3DXVECTOR3 acceleration){

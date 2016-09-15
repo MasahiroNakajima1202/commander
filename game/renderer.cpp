@@ -307,10 +307,12 @@ void Renderer::Draw(bool swap, D3DCOLOR clear_color){
 		//_effekseer_renderer->EndRendering();
 		ResetSamplerState();
 
+		SetCurrentVertexShader(_rendering_vs[Object::DRAW_LAYER_MESH]);
+		SetCurrentPixelShader(_rendering_ps[Object::DRAW_LAYER_MESH]);
+		Debug::Draw();
+
 		_cur_vs = def_vs;
 		_cur_ps = def_ps;
-
-		Debug::Draw();
 		
 		_device->EndScene();
 	}

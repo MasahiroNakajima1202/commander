@@ -136,6 +136,12 @@
     <Filter Include="ヘッダー ファイル\Scene\Game\AI\Generator">
       <UniqueIdentifier>{526ef8f2-d172-4236-a6b6-b149ae18201a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game\AI\Scorer">
+      <UniqueIdentifier>{f775a2c0-162e-41bd-a856-35d57bfca8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game\AI\Scorer">
+      <UniqueIdentifier>{1806ca8d-b45e-42a0-abd7-fa38f6ade973}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -392,6 +398,9 @@
     </ClCompile>
     <ClCompile Include="ai_generator.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_scorer.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Scorer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -652,6 +661,9 @@
     </ClInclude>
     <ClInclude Include="ai_generator.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI\Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_scorer.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Scorer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

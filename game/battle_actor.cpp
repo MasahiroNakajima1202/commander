@@ -148,8 +148,6 @@ void BattleActor::Update(void){
 		position.y += ((HitSphere*)_hit)->GetRadius() * 0.5f;
 		_hit->SetPosition(position);
 	}
-
-	Debug::EntryHitView(_position, 10.0f);
 }
 
 void BattleActor::Accel(D3DXVECTOR3 acceleration){

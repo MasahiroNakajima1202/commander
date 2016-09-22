@@ -22,6 +22,7 @@ class Renderer;
 class AIPath;
 class AIFilter;
 class AIGenerator;
+class AIScorer;
 class AIState{
 private:
 	AIState(){}
@@ -47,7 +48,8 @@ public:
 
 	//accessor
 	void SetGenerator(AIGenerator* value) { _generator = value; }
-	//void AddFilter(AIFilter* value);
+	void AddFilter(AIFilter* value);
+	void AddScorer(AIScorer* value);
 protected:
 	BattleObjectAccessor* _accessor;
 	BattleActor* _owner;
@@ -57,6 +59,7 @@ protected:
 
 	AIGenerator* _generator;
 	AIFilter* _filter_list;
+	AIScorer* _scorer_list;
 };
 
 // TODO: 点列生成クラスのalignment関数の実装、評価関数クラス、カーブの作成

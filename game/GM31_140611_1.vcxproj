@@ -90,6 +90,7 @@
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scene_factory.cpp" />
     <ClCompile Include="battle_skill.cpp" />
+    <ClCompile Include="ai_scorer.cpp" />
     <ClCompile Include="skin_mesh.cpp" />
     <ClCompile Include="sprite3d.cpp" />
     <ClCompile Include="tile_field.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="scene.h" />
     <ClInclude Include="scene_factory.h" />
     <ClInclude Include="battle_skill.h" />
+    <ClInclude Include="ai_scorer.h" />
     <ClInclude Include="skin_mesh.h" />
     <ClInclude Include="sprite3d.h" />
     <ClInclude Include="tile_field.h" />

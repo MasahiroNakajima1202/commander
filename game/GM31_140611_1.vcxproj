@@ -17,7 +17,9 @@
     </ClCompile>
     <ClCompile Include="actor_cursor.cpp" />
     <ClCompile Include="ai_filter.cpp" />
+    <ClCompile Include="ai_filter_view.cpp" />
     <ClCompile Include="ai_generator.cpp" />
+    <ClCompile Include="ai_generator_lattice.cpp" />
     <ClCompile Include="ai_path.cpp" />
     <ClCompile Include="ai_path_near_player.cpp" />
     <ClCompile Include="ai_path_weaken.cpp" />
@@ -39,6 +41,7 @@
     <ClCompile Include="battle_end_demo_lose.cpp" />
     <ClCompile Include="battle_end_demo_none.cpp" />
     <ClCompile Include="battle_end_demo_win.cpp" />
+    <ClCompile Include="battle_enemy_factory.cpp" />
     <ClCompile Include="battle_operation.cpp" />
     <ClCompile Include="battle_operation_attack.cpp" />
     <ClCompile Include="battle_skill_attack.cpp" />
@@ -105,7 +108,9 @@
     <ClInclude Include="actor_ai.h" />
     <ClInclude Include="actor_cursor.h" />
     <ClInclude Include="ai_filter.h" />
+    <ClInclude Include="ai_filter_view.h" />
     <ClInclude Include="ai_generator.h" />
+    <ClInclude Include="ai_generator_lattice.h" />
     <ClInclude Include="ai_path_near_player.h" />
     <ClInclude Include="ai_path_weaken.h" />
     <ClInclude Include="battle_actor_ghost.h" />
@@ -126,6 +131,7 @@
     <ClInclude Include="battle_end_demo_lose.h" />
     <ClInclude Include="battle_end_demo_none.h" />
     <ClInclude Include="battle_end_demo_win.h" />
+    <ClInclude Include="battle_enemy_factory.h" />
     <ClInclude Include="battle_operation.h" />
     <ClInclude Include="battle_operation_attack.h" />
     <ClInclude Include="battle_skill_attack.h" />

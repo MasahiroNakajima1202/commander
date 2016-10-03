@@ -402,6 +402,15 @@
     <ClCompile Include="ai_scorer.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Scorer</Filter>
     </ClCompile>
+    <ClCompile Include="battle_enemy_factory.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_generator_lattice.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_filter_view.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Filter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -664,6 +673,15 @@
     </ClInclude>
     <ClInclude Include="ai_scorer.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI\Scorer</Filter>
+    </ClInclude>
+    <ClInclude Include="battle_enemy_factory.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_generator_lattice.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_filter_view.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Filter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

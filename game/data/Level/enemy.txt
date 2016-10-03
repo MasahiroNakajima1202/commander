@@ -1,0 +1,19 @@
+NAME : test
+POSITION : 0,0,0
+FILE : data/ModelNDK/mitukuri.ndk
+MAKE :
+
+NAME : hoge
+POSITION : 50,0,0
+FILE : data/ModelNDK/mitukuri.ndk
+MAKE :
+
+NAME : fuga
+POSITION : -50,0,0
+FILE : data/ModelNDK/mitukuri.ndk
+MAKE :
+
+NAME : piyo
+POSITION : 0,0,50
+FILE : data/ModelNDK/mitukuri.ndk
+MAKE :

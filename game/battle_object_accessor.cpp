@@ -27,6 +27,8 @@
 
 #include "gimmick.h"
 #include "gimmick_ladder.h"
+
+#include "battle_enemy_factory.h"
 //*****************************************************************************
 //  constant
 //*****************************************************************************
@@ -154,81 +156,8 @@ BattleObjectAccessor::BattleObjectAccessor(Renderer* renderer) :
 	}
 
 	//初期エネミーデータ
-	const int enemy_num(22);
-	char* enemy_filename = "data/ModelNdk/mitukuri.ndk";
-	D3DXVECTOR3 enemy_position[enemy_num] = {
-		//最初の斜面
-		D3DXVECTOR3(-290.0f, 0.0f, -150.0f),
-		D3DXVECTOR3(-270.0f, 0.0f, -210.0f),
-		D3DXVECTOR3(-230.0f, 0.0f, -170.0f),
-		//丘の上
-		D3DXVECTOR3(-290.0f, 0.0f, -70.0f),
-		D3DXVECTOR3(-290.0f, 0.0f, -10.0f),
-		D3DXVECTOR3(-210.0f, 0.0f, -10.0f),
-		//伏兵
-		D3DXVECTOR3(-90.0f, 0.0f, -30.0f),
-		D3DXVECTOR3(-90.0f, 0.0f, -15.0f),
-		//攻囲中
-		D3DXVECTOR3(-290.0f, 0.0f, 210.0f),
-		D3DXVECTOR3(-260.0f, 0.0f, 210.0f),
-		D3DXVECTOR3(-230.0f, 0.0f, 230.0f),
-		D3DXVECTOR3(-210.0f, 0.0f, 260.0f),
-		D3DXVECTOR3(-210.0f, 0.0f, 290.0f),
-		//高台番兵
-		D3DXVECTOR3(90.0f, 0.0f, 90.0f),
-		D3DXVECTOR3(110.0f, 0.0f, 90.0f),
-		D3DXVECTOR3(130.0f, 0.0f, 90.0f),
-		//獄卒
-		D3DXVECTOR3(260.0f, 0.0f, 210.0f),
-		//最初の門兵
-		D3DXVECTOR3(220.0f, 0.0f, -20.0f),
-		D3DXVECTOR3(300.0f, 0.0f, -20.0f),
-		//二番目の門兵
-		D3DXVECTOR3(200.0f, 0.0f, -200.0f),
-		D3DXVECTOR3(200.0f, 0.0f, -240.0f),
-		D3DXVECTOR3(200.0f, 0.0f, -280.0f),
-	};
-	float enemy_rotation[enemy_num] = {
-		//最初の斜面
-		D3DX_PI * 1.0f,
-		D3DX_PI * 1.0f,
-		D3DX_PI * 1.0f,
-		//丘の上
-		D3DX_PI * 1.0f,
-		D3DX_PI * 1.0f,
-		D3DX_PI * 1.0f,
-		//伏兵
-		D3DX_PI * 0.5f,
-		D3DX_PI * 0.5f,
-		//攻囲中
-		D3DX_PI * 0.0f,
-		D3DX_PI * 1.75f,
-		D3DX_PI * 1.75f,
-		D3DX_PI * 1.75f,
-		D3DX_PI * 1.5f,
-		//高台番兵
-		D3DX_PI * 1.0f,
-		D3DX_PI * 1.0f,
-		D3DX_PI * 1.0f,
-		//獄卒
-		D3DX_PI * 1.0f,
-		//最初の門兵
-		D3DX_PI * 0.0f,
-		D3DX_PI * 0.0f,
-		//二番目の門兵
-		D3DX_PI * 0.5f,
-		D3DX_PI * 0.5f,
-		D3DX_PI * 0.5f,
-	};
-	for (int i = 0; i < enemy_num; i++) {
-		BattleActor::PARAMETER parameter(100, 100, 50, 5);
-		_enemy_array[i] = new BattleActor(_renderer, parameter, enemy_filename);
-
-		D3DXVECTOR3 position(enemy_position[i]);
-		position.y = _model_field->GetHeight(position.x, position.z);
-		_enemy_array[i]->SetPosition(position);
-		_enemy_array[i]->SetRotation(D3DXVECTOR3(0.0f, enemy_rotation[i], 0.0f));
-	}
+	BattleEnemyFactory enemy_factory(_renderer, _model_field);
+	enemy_factory.Build(_enemy_array, ENEMY_MAX);
 
 	//gimmick test
 	_gimmick_array[0] = new GimmickLadder(_renderer, D3DXVECTOR3(-60.0f, 0.0f, 130.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f), 12);
@@ -241,12 +170,7 @@ BattleObjectAccessor::BattleObjectAccessor(Renderer* renderer) :
 	_gimmick_array[7] = new GimmickLadder(_renderer, D3DXVECTOR3(220.0f, 80.0f, -240.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f), 6);
 	_gimmick_array[8] = new GimmickLadder(_renderer, D3DXVECTOR3(220.0f, 80.0f, -280.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f), 6);
 
-	//ai test
-	ActorAI* enemy_ai(new ActorAI(this, _renderer, _enemy_array[0]));
-	AIState* ai_state(new AIState(this, _renderer, _enemy_array[0]));
-	enemy_ai->AddState(ai_state);
-	enemy_ai->SetCurrentState(ai_state);
-	_enemy_array[0]->SetAI(enemy_ai);
+	
 
 	_camera_director = new CameraDirector(_player_array[0], _camera);
 

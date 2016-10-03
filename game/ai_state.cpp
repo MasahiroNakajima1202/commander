@@ -24,9 +24,7 @@ _target_position(0.0f, 0.0f, 0.0f),
 _generator(nullptr),
 _filter_list(nullptr),
 _scorer_list(nullptr){
-	//hack
-	_generator = new AIGenerator(accessor, owner, 5, 1, 5, 10.0f, 0.0f, 10.0f);
-	_filter_list = new AIFilter(accessor);
+	
 }
 
 AIState::~AIState(){

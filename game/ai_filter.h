@@ -27,11 +27,13 @@ private:
 	AIFilter() {}
 public:
 
-	AIFilter(BattleObjectAccessor* accessor);
+	AIFilter(BattleObjectAccessor* accessor, BattleActor* owner);
 
 	virtual ~AIFilter();
 
-	virtual void Apply(AIState::POINT* src_array, int src_length);
+	virtual void Apply(AIState::POINT* point_array, int array_length);
+
+	virtual void Judge(AIState::POINT* point) = 0;
 
 	//accessor
 	void SetNextFilter(AIFilter* value) { _next = value; }
@@ -39,7 +41,7 @@ public:
 protected:
 	AIFilter* _next;
 	BattleObjectAccessor* _accessor;
-	
+	BattleActor* _owner;
 };
 
 

@@ -1,15 +1,13 @@
 //*****************************************************************************
-//  敵AI点列生成くらすクラス
+//  敵AIフィルタクラス 視界内
 //  author: 中島将浩
-//  update: 2016/09/06
+//  update: 2016/10/03
 //*****************************************************************************
-#ifndef _AI_GENERATOR_H_
-#define _AI_GENERATOR_H_
+#ifndef _AI_FILTER_VIEW_H_
+#define _AI_FILTER_VIEW_H_
 
-#include "main.h"
-#include <d3dx9.h>
 
-#include "ai_state.h"
+#include "ai_filter.h"
 
 //*****************************************************************************
 //  constant
@@ -22,24 +20,16 @@ class BattleActor;
 class BattleObjectAccessor;
 class Renderer;
 class AIState;
-class AIGenerator {
-private:
-	AIGenerator(){}
+class AIFilterView : public AIFilter{
 public:
 
-	AIGenerator(BattleObjectAccessor* accessor, BattleActor* owner);
+	AIFilterView(BattleObjectAccessor* accessor, BattleActor* owner, float angel);
 
-	virtual ~AIGenerator();
+	virtual ~AIFilterView();
 
-	virtual void AlignmentPoints(void) = 0;
-
-	//accessor
-	virtual AIState::POINT* GetPointTable(void) = 0;
-	virtual int GetTableLength(void) = 0;
-
+	virtual void Judge(AIState::POINT* point);
 protected:
-	BattleObjectAccessor* _accessor;
-	BattleActor* _owner;
+	float _angle;
 };
 
 

@@ -1,15 +1,16 @@
 //*****************************************************************************
 //  ìGAIï]âøÉNÉâÉX
+//  ãóó£àÀë∂
 //  author: íÜìáè´ç_
-//  update: 2016/09/23
+//  update: 2016/10/12
 //*****************************************************************************
-#ifndef _AI_SCORER_H_
-#define _AI_SCORER_H_
+#ifndef _AI_SCORER_DISTANCE_PLAYER_H_
+#define _AI_SCORER_DISTANCE_PLAYER_H_
 
 #include "main.h"
 #include <d3dx9.h>
 
-#include "ai_state.h"
+#include "ai_scorer.h"
 
 //*****************************************************************************
 //  constant
@@ -22,25 +23,23 @@ class BattleActor;
 class BattleObjectAccessor;
 class Renderer;
 class AIState;
-class AIScorer {
-private:
-	AIScorer() {}
+class AIScorerDistancePlayer : public AIScorer {
 public:
 
-	AIScorer(BattleObjectAccessor* accessor);
+	AIScorerDistancePlayer(BattleObjectAccessor* accessor);
 
-	virtual ~AIScorer();
+	virtual ~AIScorerDistancePlayer();
 
-	virtual void Apply(AIState::POINT* src_array, int src_length);
+	void SetDistance(float value) { _distance = value; }
+	void SetRange(float value) { _range = value; }
 
-	//accessor
-	void SetNextScorer(AIScorer* value) { _next = value; }
-	AIScorer* GetNextScorer(void) { return _next; }
 protected:
-	AIScorer* _next;
-	BattleObjectAccessor* _accessor;
+	virtual float Score(AIState::POINT* point);
 
-	virtual float Score(AIState::POINT* point) = 0;
+	//íÜêSãóó£
+	float _distance;
+	//ãóó£Ç©ÇÁÇÃîÕàÕ
+	float _range;
 };
 
 

@@ -57,4 +57,8 @@ void AIGeneratorLattice::AlignmentPoints(void) {
 
 		position.z += Z_PADDING;
 	}
+
+	for (int i = 0; i < _table_length; i++) {
+		_point_table[i].value = 0.0f;
+	}
 }

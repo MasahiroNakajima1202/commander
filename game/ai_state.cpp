@@ -54,10 +54,9 @@ void AIState::Update(void) {
 	for (int i = 0; i < length; i++){
 		POINT* point(&point_table[i]);
 		if (!point->enable) { continue; }
-		Debug::EntryHitView(point->position, 2.0f, D3DXVECTOR4(1.0f, 0.0f, 0.0f, 1.0f));
+		float gb(1.0f - point->value);
+		Debug::EntryHitView(point->position, 2.0f, D3DXVECTOR4(1.0f, gb, gb, 1.0f));
 	}
-
-	//デバッグスフィアに色をつけるところから
 }
 
 void AIState::AddFilter(AIFilter* value) {

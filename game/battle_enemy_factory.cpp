@@ -13,6 +13,7 @@
 #include "ai_state.h"
 #include "ai_generator_lattice.h"
 #include "ai_filter_view.h"
+#include "ai_scorer_distance_player.h"
 
 #include <stdio.h>
 
@@ -24,8 +25,12 @@ void BattleEnemyFactory::Build(BattleActor** dest, int limit_length) {
 	AIState* ai_state = new AIState(_accessor, _renderer, dest[0]);
 	AIGeneratorLattice* generator = new AIGeneratorLattice(_accessor, dest[0], 10, 1, 10, 20.0f, 0.0f, 20.0f);
 	AIFilterView* filter = new AIFilterView(_accessor, dest[0], D3DX_PI * 0.25f);
+	AIScorerDistancePlayer* scorer = new AIScorerDistancePlayer(_accessor);
+	scorer->SetDistance(100.0f);
+	scorer->SetRange(80.0f);
 	ai_state->AddFilter(filter);
 	ai_state->SetGenerator(generator);
+	ai_state->AddScorer(scorer);
 	ai->AddState(ai_state);
 	dest[0]->SetAI(ai);
 	ai->SetCurrentState(ai_state);

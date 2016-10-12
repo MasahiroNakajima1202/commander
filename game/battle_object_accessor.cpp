@@ -156,7 +156,7 @@ BattleObjectAccessor::BattleObjectAccessor(Renderer* renderer) :
 	}
 
 	//初期エネミーデータ
-	BattleEnemyFactory enemy_factory(_renderer, _model_field);
+	BattleEnemyFactory enemy_factory(_renderer, this, _model_field);
 	enemy_factory.Build(_enemy_array, ENEMY_MAX);
 
 	//gimmick test

@@ -40,8 +40,6 @@ void AIGeneratorLattice::AlignmentPoints(void) {
 	init_position.z -= (float)(Z_POINT_NUM - 1) * 0.5f * Z_PADDING;
 	D3DXVECTOR3 position(init_position);
 
-	Debug::EntryHitView(_owner->GetPosition(), 10.0f);
-
 	for (int k = 0; k < Z_POINT_NUM; k++) {
 		position.y = init_position.y;
 

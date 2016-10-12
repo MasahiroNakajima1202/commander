@@ -30,5 +30,4 @@ void AIFilterView::Judge(AIState::POINT* point) {
 
 	float r(D3DXVec3Dot(&v, &front));
 	point->enable = (r > cosf(_angle));
-	//AIScoreの抽象化と実装から……の前に動作確認くらい取るか ついでにデバッグスフィアに色もつけられるように
 }

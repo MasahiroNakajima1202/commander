@@ -119,14 +119,9 @@ void Debug::Draw(void){
 
 		D3DXMATERIAL *mat = (D3DXMATERIAL*)mesh->mat_buff->GetBufferPointer();
 		for (unsigned int j = 0; j<mesh->mat_num; j++) {
-			D3DMATERIAL9 work_mat = mat[j].MatD3D;
-			D3DXVECTOR4 diffuse(work_mat.Diffuse.r,
-				work_mat.Diffuse.g,
-				work_mat.Diffuse.b,
-				work_mat.Diffuse.a);
 
 			_renderer->SetTextureToShader(mesh->texture[j]);
-			_renderer->SetMaterialDiffuse(diffuse);
+			_renderer->SetMaterialDiffuse(_hit_view[i].color);
 
 			_renderer->SetCurrentShader();
 
@@ -158,7 +153,7 @@ void Debug::LoadHitView(void){
 void Debug::ReleaseHitView(void){
 }
 
-void Debug::EntryHitView(D3DXVECTOR3 pos, float radius){
+void Debug::EntryHitView(D3DXVECTOR3 pos, float radius, D3DXVECTOR4 color){
 	int i = 0;				//loop index
 #ifdef _DEBUG_HIT_DRAW_
 
@@ -167,6 +162,7 @@ void Debug::EntryHitView(D3DXVECTOR3 pos, float radius){
 			_hit_view[i].position = pos;
 			_hit_view[i].radius = radius;
 			_hit_view[i].flag = true;
+			_hit_view[i].color = color;
 			break;
 		}
 	}

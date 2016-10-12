@@ -9,11 +9,26 @@
 #include "battle_actor.h"
 #include "model_field.h"
 
+#include "actor_ai.h"
+#include "ai_state.h"
+#include "ai_generator_lattice.h"
+#include "ai_filter_view.h"
+
 #include <stdio.h>
 
 void BattleEnemyFactory::Build(BattleActor** dest, int limit_length) {
 	BuildEnemy("data/Level/enemy.txt", dest, limit_length);
-	BuildAI("data/Level/ai.txt", dest, limit_length);
+	//BuildAI("data/Level/ai.txt", dest, limit_length);
+	
+	ActorAI* ai = new ActorAI(_accessor, _renderer, dest[0]);
+	AIState* ai_state = new AIState(_accessor, _renderer, dest[0]);
+	AIGeneratorLattice* generator = new AIGeneratorLattice(_accessor, dest[0], 10, 1, 10, 20.0f, 0.0f, 20.0f);
+	AIFilterView* filter = new AIFilterView(_accessor, dest[0], D3DX_PI * 0.25f);
+	ai_state->AddFilter(filter);
+	ai_state->SetGenerator(generator);
+	ai->AddState(ai_state);
+	dest[0]->SetAI(ai);
+	ai->SetCurrentState(ai_state);
 }
 
 

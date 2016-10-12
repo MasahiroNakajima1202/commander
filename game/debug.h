@@ -70,7 +70,7 @@ public:
 	//accessor
 	static void SetRenderer(Renderer *renderer){Debug::_renderer = renderer;}
 
-	static void EntryHitView(D3DXVECTOR3 pos, float radius);
+	static void EntryHitView(D3DXVECTOR3 pos, float radius, D3DXVECTOR4 color);
 
 
 private:
@@ -89,6 +89,7 @@ private:
 		D3DXVECTOR3 position;
 		float radius;
 		bool flag;
+		D3DXVECTOR4 color;
 	};
 
 	static const int HIT_VIEW_MAX = 128;

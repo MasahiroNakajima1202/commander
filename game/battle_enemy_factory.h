@@ -21,13 +21,15 @@
 //*****************************************************************************
 
 class Renderer;
+class BattleObjectAccessor;
 class BattleActor;
 class ModelField;
 class BattleEnemyFactory {
 	BattleEnemyFactory() {}
 public:
-	BattleEnemyFactory(Renderer* renderer, ModelField* field):
+	BattleEnemyFactory(Renderer* renderer, BattleObjectAccessor* accessor, ModelField* field) :
 	_renderer(renderer),
+	_accessor(accessor),
 	_field(field){}
 	virtual ~BattleEnemyFactory() {}
 
@@ -35,6 +37,7 @@ public:
 
 private:
 	Renderer* _renderer;
+	BattleObjectAccessor* _accessor;
 	ModelField* _field;
 
 	static const int STR_LENGTH = 64;

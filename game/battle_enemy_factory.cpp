@@ -215,8 +215,6 @@ void BattleEnemyFactory::BuildAI(char* filename, BattleActor* owner) {
 	owner->SetAI(ai);
 }
 
-//移動先の位置を決めるコードを書く
-//同じ点数ならば近いほう優先で
 
 void BattleEnemyFactory::ExtractWord(char* src_buffer, int begin, int buffer_length, char* word_buffer, int& word_length, int& end) {
 	if (src_buffer == nullptr) { return; }

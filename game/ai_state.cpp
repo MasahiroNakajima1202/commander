@@ -51,11 +51,37 @@ void AIState::Update(void) {
 		cur_scorer = cur_scorer->GetNextScorer();
 	}
 	
+	//target position
+	float target_distance = 9999.0f;
+	int index(0);
+	float max_score(0.0f);
 	for (int i = 0; i < length; i++){
 		POINT* point(&point_table[i]);
 		if (!point->enable) { continue; }
+		if (max_score > point->value) { continue; }
+
+		D3DXVECTOR3 to_owner(_owner->GetPosition() - point->position);
+		to_owner.y = 0.0f;
+		float sq_distance(D3DXVec3Dot(&to_owner, &to_owner));
+
+		if (max_score < point->value || sq_distance < target_distance * target_distance) {
+			index = i;
+			target_distance = sqrtf(sq_distance);
+			max_score = point->value;
+		}
+	}
+
+	_target_position = point_table[index].position;
+	//‚±‚±‚ÅŒˆ‚ß‚½ˆÚ“®æ‚ÉÀÛ‚ÉˆÚ“®‚³‚¹‚é
+	
+
+	for (int i = 0; i < length; i++) {
+		POINT* point(&point_table[i]);
+		if (!point->enable) { continue; }
 		float gb(1.0f - point->value);
-		Debug::EntryHitView(point->position, 2.0f, D3DXVECTOR4(1.0f, gb, gb, 1.0f));
+		float size(2.0f);
+		if (i == index) { size = 4.0f; }
+		Debug::EntryHitView(point->position, size, D3DXVECTOR4(1.0f, gb, gb, 1.0f));
 	}
 }
 

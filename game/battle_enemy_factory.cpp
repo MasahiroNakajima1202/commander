@@ -19,21 +19,7 @@
 
 void BattleEnemyFactory::Build(BattleActor** dest, int limit_length) {
 	BuildEnemy("data/Level/enemy.txt", dest, limit_length);
-	//BuildAI("data/Level/ai.txt", dest, limit_length);
-	
-	ActorAI* ai = new ActorAI(_accessor, _renderer, dest[0]);
-	AIState* ai_state = new AIState(_accessor, _renderer, dest[0]);
-	AIGeneratorLattice* generator = new AIGeneratorLattice(_accessor, dest[0], 10, 1, 10, 20.0f, 0.0f, 20.0f);
-	AIFilterView* filter = new AIFilterView(_accessor, dest[0], D3DX_PI * 0.25f);
-	AIScorerDistancePlayer* scorer = new AIScorerDistancePlayer(_accessor);
-	scorer->SetDistance(100.0f);
-	scorer->SetRange(80.0f);
-	ai_state->AddFilter(filter);
-	ai_state->SetGenerator(generator);
-	ai_state->AddScorer(scorer);
-	ai->AddState(ai_state);
-	dest[0]->SetAI(ai);
-	ai->SetCurrentState(ai_state);
+	BuildAI("data/Level/ai.txt", dest[0]);
 }
 
 
@@ -125,7 +111,7 @@ void BattleEnemyFactory::BuildEnemy(char* filename, BattleActor** dest, int limi
 	buffer = nullptr;
 }
 
-void BattleEnemyFactory::BuildAI(char* filename, BattleActor** dest, int limit_length) {
+void BattleEnemyFactory::BuildAI(char* filename, BattleActor* owner) {
 	FILE* fp(nullptr);
 	fp = fopen(filename, "rb");
 	if (fp == nullptr) { return; }
@@ -140,34 +126,150 @@ void BattleEnemyFactory::BuildAI(char* filename, BattleActor** dest, int limit_l
 	fread(buffer, 1, buffer_length, fp);
 	fclose(fp);
 
+	ActorAI* ai(new ActorAI(_accessor, _renderer, owner));
+	AIState* ai_state(new AIState(_accessor, _renderer, owner));
+
 	int cursor(0);
 	int index(0);
 	ENEMY_DATA enemy_data;
 	enemy_data.Initialize();
+	int mode(0);
+	AIData data;
 	while (cursor < buffer_length) {
-		if (buffer[cursor] == '\n' || buffer[cursor] == '\r') {
-			cursor++;
-			continue;
-		}
-		//文字列を:の前後で分解
-		int attr_length(0);
-		char attr[STR_LENGTH];
-		int value_length(0);
-		char value[STR_LENGTH];
-		sscanf(buffer + cursor, "%s : %s", attr, value);
-		attr_length = strlen(attr);
-		value_length = strlen(value);
+		char word[64] = "";
+		int word_length(0);
+		int next_cursor(cursor);
+
+		ExtractWord(buffer, cursor, buffer_length, word, word_length, next_cursor);
+		cursor = next_cursor;
+		if (word[0] == '\0') {break;}
 
 		//GENERATOR / FILTER / SCOREなら生成
-		
+		if (strcmp(word, "GENERATOR") == 0) {
+			data.mode = 0;
+		}
+		if (strcmp(word, "FILTER") == 0) {
+			data.mode = 1;
+		}
+		if (strcmp(word, "SCORE") == 0) {
+			data.mode = 2;
+		}
 
-		cursor += attr_length + 3 + value_length;
+		if (strcmp(word, "TYPE") == 0) {
+			ExtractWord(buffer, cursor, buffer_length, word, word_length, next_cursor);
+			cursor = next_cursor;
+
+			strcpy(data.type, word);
+		}
+		if (strcmp(word, "NAME") == 0) {
+			ExtractWord(buffer, cursor, buffer_length, word, word_length, next_cursor);
+			cursor = next_cursor;
+
+			strcpy(data.name, word);
+		}
+		if (strcmp(word, "STRIDE") == 0) {
+			ExtractWord(buffer, cursor, buffer_length, word, word_length, next_cursor);
+			cursor = next_cursor;
+
+			sscanf(word, "%f", &data.stride);
+		}
+		if (strcmp(word, "ANGLE") == 0) {
+			ExtractWord(buffer, cursor, buffer_length, word, word_length, next_cursor);
+			cursor = next_cursor;
+
+			sscanf(word, "%f", &data.angle);
+		}
+		if (strcmp(word, "DIST") == 0) {
+			ExtractWord(buffer, cursor, buffer_length, word, word_length, next_cursor);
+			cursor = next_cursor;
+
+			sscanf(word, "%f", &data.dist);
+		}
+		if (strcmp(word, "RANGE") == 0) {
+			ExtractWord(buffer, cursor, buffer_length, word, word_length, next_cursor);
+			cursor = next_cursor;
+
+			sscanf(word, "%f", &data.range);
+		}
+		if (strcmp(word, "MAKE") == 0) {
+			if (data.mode == 0) {
+				AIGenerator* gen(CreateGenerator(data, owner));
+				ai_state->SetGenerator(gen);
+			}
+			else if (data.mode == 1) {
+				AIFilter* filter(CreateFilter(data, owner));
+				ai_state->AddFilter(filter);
+			}
+			else if (data.mode == 2) {
+				AIScorer* scorer(CreateScorer(data, owner));
+				ai_state->AddScorer(scorer);
+			}
+		}
 	}
 
 	delete[] buffer;
 	buffer = nullptr;
+
+	ai->AddState(ai_state);
+	ai->SetCurrentState(ai_state);
+	owner->SetAI(ai);
 }
 
-void BattleEnemyFactory::CreateAndAtachAI(unsigned char* str_data, int& cursor) {
-	//kokokara
+//移動先の位置を決めるコードを書く
+//同じ点数ならば近いほう優先で
+
+void BattleEnemyFactory::ExtractWord(char* src_buffer, int begin, int buffer_length, char* word_buffer, int& word_length, int& end) {
+	if (src_buffer == nullptr) { return; }
+	if (word_buffer == nullptr) { return; }
+
+	int cursor(begin);
+
+	//previouce spaces
+	while (src_buffer[cursor] == ' ' || src_buffer[cursor] == '\n' || src_buffer[cursor] == '\r') {
+		cursor++;
+	}
+
+	//word
+	int index(0);
+	while (!(src_buffer[cursor] == ' ' || src_buffer[cursor] == '\n' || src_buffer[cursor] == '\r')) {
+		if (cursor >= buffer_length) {
+			break;
+		}
+		word_buffer[index] = src_buffer[cursor];
+		cursor++;
+		index++;
+	}
+
+	word_buffer[index] = '\0';
+	word_length = index;
+
+	end = cursor;
+}
+
+AIGenerator* BattleEnemyFactory::CreateGenerator(AIData& data, BattleActor* owner) {
+	if (strcmp(data.type, "LATTICE") == 0) {
+		AIGeneratorLattice* gen(new AIGeneratorLattice(_accessor, owner, 10, 1, 10, data.stride, data.stride, data.stride));
+		return gen;
+	}
+
+	return nullptr;
+}
+AIFilter* BattleEnemyFactory::CreateFilter(AIData& data, BattleActor* owner) {
+	if (strcmp(data.type, "VIEW") == 0) {
+		AIFilterView* filter(new AIFilterView(_accessor, owner, data.angle));
+
+		return filter;
+	}
+
+	return nullptr;
+}
+AIScorer* BattleEnemyFactory::CreateScorer(AIData& data, BattleActor* owner) {
+	if (strcmp(data.type, "DIST_PLAYER") == 0) {
+		AIScorerDistancePlayer* scorer(new AIScorerDistancePlayer(_accessor));
+		scorer->SetDistance(data.dist);
+		scorer->SetRange(data.range);
+		return scorer;
+	}
+
+	return nullptr;
 }

@@ -24,6 +24,9 @@ class Renderer;
 class BattleObjectAccessor;
 class BattleActor;
 class ModelField;
+class AIGenerator;
+class AIFilter;
+class AIScorer;
 class BattleEnemyFactory {
 	BattleEnemyFactory() {}
 public:
@@ -54,11 +57,35 @@ private:
 	};
 	void LoadByAttribute(ENEMY_DATA& dest, char* attr, int attr_length, char* value, int value_length);
 	BattleActor* CreateEnemy(ENEMY_DATA& data);
-	void CreateAndAtachAI(unsigned char* str_data, int& cursor);
-
 
 	void BuildEnemy(char* filename, BattleActor** dest, int limit_length);
-	void BuildAI(char* filename, BattleActor** dest, int limit_length);
+	void BuildAI(char* filename, BattleActor* dest);
+
+
+	struct AIData {
+		int mode;
+		char type[32];
+		char name[32];
+		float stride;
+		float angle;
+		float dist;
+		float range;
+
+		AIData() :
+			mode(0),
+			stride(0.0f),
+			angle(0.0f),
+			dist(0.0f),
+			range(0.0f){
+			strcpy(type, "");
+			strcpy(name, "");
+		}
+	};
+	AIGenerator* CreateGenerator(AIData& data, BattleActor* owner);
+	AIFilter* CreateFilter(AIData& data, BattleActor* owner);
+	AIScorer* CreateScorer(AIData& data, BattleActor* owner);
+
+	void  ExtractWord(char* buffer, int begin, int buffer_length, char* word_buffer, int& word_length, int& end);
 };
 
 

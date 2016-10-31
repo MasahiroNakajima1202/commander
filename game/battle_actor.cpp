@@ -105,6 +105,13 @@ BattleActor::~BattleActor(){
 }
 
 void BattleActor::Update(void){
+	//–{“–‚Í“–‚½‚è”»’è‚Æ‚©‚ÌŒã‚ÅÀ•W‚ªfix‚³‚ê‚Ä‚©‚çs‚¤‚×‚«
+	if (_ai != nullptr) {
+		_ai->Update();
+		D3DXVECTOR3 destination(_ai->GetTargetPosition());
+		WalkTo(destination);
+	}
+
 	_pre_position = _position;
 
 	//update velociy
@@ -121,9 +128,7 @@ void BattleActor::Update(void){
 	_rotation += omega;
 	PiSectionFix(&_rotation, &_rotation);
 	
-	if (_ai != nullptr) {
-		_ai->Update();
-	}
+	
 
 	_cur_state->Update();
 

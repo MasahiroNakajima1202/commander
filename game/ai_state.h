@@ -50,6 +50,7 @@ public:
 	void SetGenerator(AIGenerator* value) { _generator = value; }
 	void AddFilter(AIFilter* value);
 	void AddScorer(AIScorer* value);
+	D3DXVECTOR3 GetTargetPosition(void) { return _target_position; }
 protected:
 	BattleObjectAccessor* _accessor;
 	BattleActor* _owner;

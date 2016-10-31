@@ -37,6 +37,7 @@ public:
 	ActorAI* AddState(AIState* state);
 	ActorAI* AddPath(AIPath* path);
 
+	D3DXVECTOR3 GetTargetPosition(void);
 	//accessor
 protected:
 	BattleObjectAccessor* _accessor;

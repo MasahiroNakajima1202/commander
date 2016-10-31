@@ -7,6 +7,8 @@
 
 #include "ai_state.h"
 #include "ai_path.h"
+
+#include "battle_actor.h"
 //*****************************************************************************
 //  constant
 //*****************************************************************************
@@ -104,5 +106,12 @@ ActorAI* ActorAI::AddPath(AIPath* path) {
 	}
 
 	return this;
+}
+
+D3DXVECTOR3 ActorAI::GetTargetPosition(void) {
+	if (_owner == nullptr) { return D3DXVECTOR3(0.0f, 0.0f, 0.0f); }
+	if (_current_state == nullptr) { return _owner->GetPosition(); }
+
+	return _current_state->GetTargetPosition();
 }
 

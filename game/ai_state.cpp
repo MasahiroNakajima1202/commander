@@ -72,7 +72,6 @@ void AIState::Update(void) {
 	}
 
 	_target_position = point_table[index].position;
-	//‚±‚±‚ÅŒˆ‚ß‚½ˆÚ“®æ‚ÉÀÛ‚ÉˆÚ“®‚³‚¹‚é
 	
 
 	for (int i = 0; i < length; i++) {

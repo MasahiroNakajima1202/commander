@@ -246,7 +246,7 @@ void BattleEnemyFactory::ExtractWord(char* src_buffer, int begin, int buffer_len
 
 AIGenerator* BattleEnemyFactory::CreateGenerator(AIData& data, BattleActor* owner) {
 	if (strcmp(data.type, "LATTICE") == 0) {
-		AIGeneratorLattice* gen(new AIGeneratorLattice(_accessor, owner, 10, 1, 10, data.stride, data.stride, data.stride));
+		AIGeneratorLattice* gen(new AIGeneratorLattice(_accessor, owner, 9, 1, 9, data.stride, data.stride, data.stride));
 		return gen;
 	}
 
@@ -254,7 +254,8 @@ AIGenerator* BattleEnemyFactory::CreateGenerator(AIData& data, BattleActor* owne
 }
 AIFilter* BattleEnemyFactory::CreateFilter(AIData& data, BattleActor* owner) {
 	if (strcmp(data.type, "VIEW") == 0) {
-		AIFilterView* filter(new AIFilterView(_accessor, owner, data.angle));
+		float angle(data.angle / 180.0f * D3DX_PI);
+		AIFilterView* filter(new AIFilterView(_accessor, owner, angle));
 
 		return filter;
 	}

@@ -18,8 +18,6 @@ _angle(angle){
 AIFilterView::~AIFilterView() {
 }
 
-//walk to ‚ÌŠÔ‚ÉŒü‚«‚ª•Ï‚í‚é‚æ‚¤‚É
-
 void AIFilterView::Judge(AIState::POINT* point) {
 	if (_owner == nullptr) { return; }
 

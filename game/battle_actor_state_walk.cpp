@@ -7,7 +7,7 @@
 
 void BattleActorStateWalk::Update(void){
 	//Œü‚«‡‚í‚¹
-
+	
 
 }
 

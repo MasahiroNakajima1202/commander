@@ -166,22 +166,24 @@ void BattleActor::WalkTo(D3DXVECTOR3 dest_position){
 
 	D3DXVECTOR3 acceleration(direction);
 	float length = D3DXVec3Length(&acceleration);
+	if (length <= 2.0f) { return; }
 	D3DXVECTOR3 h_velocity(_velocity);
 	h_velocity.y = 0.0f;
 	float speed(D3DXVec3Length(&h_velocity));
 
 	//ñ⁄ìIínÇâzÇ¶Ç»Ç¢îÕàÕÇ≈â¡ë¨
 	D3DXVec3Normalize(&acceleration, &acceleration);
-	if(length > _walk_accel + speed){
-		acceleration *= _walk_accel;
-		Accel(acceleration);
-	}
-	else{
-		D3DXVECTOR3 velocity(acceleration);
-		velocity *= length;
-		velocity.y = _velocity.y;
-		SetVelocity(velocity);
-	}
+	acceleration *= _walk_accel;
+	Accel(acceleration);
+
+	//å¸Ç´çáÇÌÇπ
+	float angle(atan2f(direction.x, direction.z));
+	PiSectionFix(&angle, &angle);
+
+	D3DXVECTOR3 dest_rotation(_rotation);
+	dest_rotation.y = angle;
+
+	SetDestRotation(dest_rotation);
 }
 
 void BattleActor::SetAction(BattleAction* action){

@@ -27,20 +27,6 @@ BattleActionWalk::~BattleActionWalk(){
 
 void BattleActionWalk::Update(void){
 	if(_owner == nullptr){return;}
-	//Œü‚«‡‚í‚¹
-	D3DXVECTOR3 position(_owner->GetPosition());
-	D3DXVECTOR3 direction(_dest_position - position);
-
-	//‚í‚¸‚©‚·‚¬‚éˆÚ“®‚Å‚ÍŒü‚«‚ð•Ï‚¦‚È‚¢
-	if(D3DXVec3Dot(&direction, &direction) > 1.0f * 1.0f){
-		float angle(atan2f(direction.x, direction.z));
-		PiSectionFix(&angle, &angle);
-
-		D3DXVECTOR3 rotation(_owner->GetRotation());
-		rotation.y = angle;
-
-		_owner->SetDestRotation(rotation);
-	}
 	
 	_owner->WalkTo(_dest_position);
 }

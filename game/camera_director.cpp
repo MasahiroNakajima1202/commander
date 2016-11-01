@@ -29,8 +29,8 @@ void CameraDirector::Update(void){
 	//eye, at positionŽZo
 	D3DXVECTOR3 eye(0.0f, 0.0f, 0.0f);
 	D3DXVECTOR3 at(0.0f, 0.0f, 0.0f);
-	float eye_h_distance(45.0f);
-	float eye_v_distance(50.0f);
+	float eye_h_distance(80.0f);
+	float eye_v_distance(40.0f);
 	float at_h_distance(200.0f);
 	float at_v_distance(10.0f);
 	D3DXVECTOR3 owner_position(_owner->GetPosition());

@@ -23,7 +23,7 @@ class AIState;
 class AIFilterView : public AIFilter{
 public:
 
-	AIFilterView(BattleObjectAccessor* accessor, BattleActor* owner, float angel);
+	AIFilterView(BattleObjectAccessor* accessor, BattleActor* owner, float angle);
 
 	virtual ~AIFilterView();
 

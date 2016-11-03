@@ -26,7 +26,7 @@ class AIState;
 class AIScorerDistancePlayer : public AIScorer {
 public:
 
-	AIScorerDistancePlayer(BattleObjectAccessor* accessor);
+	AIScorerDistancePlayer(BattleObjectAccessor* accessor, BattleActor* owner);
 
 	virtual ~AIScorerDistancePlayer();
 

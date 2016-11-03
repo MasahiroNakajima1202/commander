@@ -4,9 +4,10 @@
 //  update: 2016/09/23
 //*****************************************************************************
 #include "ai_scorer.h"
-AIScorer::AIScorer(BattleObjectAccessor* accessor) :
-	_accessor(accessor),
-	_next(nullptr) {
+AIScorer::AIScorer(BattleObjectAccessor* accessor,BattleActor* owner) :
+_accessor(accessor),
+_owner(owner),
+_next(nullptr){
 }
 
 AIScorer::~AIScorer() {}

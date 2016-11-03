@@ -17,12 +17,15 @@
     </ClCompile>
     <ClCompile Include="actor_cursor.cpp" />
     <ClCompile Include="ai_filter.cpp" />
+    <ClCompile Include="ai_filter_height.cpp" />
     <ClCompile Include="ai_filter_view.cpp" />
     <ClCompile Include="ai_generator.cpp" />
     <ClCompile Include="ai_generator_lattice.cpp" />
     <ClCompile Include="ai_path.cpp" />
     <ClCompile Include="ai_path_near_player.cpp" />
     <ClCompile Include="ai_path_weaken.cpp" />
+    <ClCompile Include="ai_scorer_distance.cpp" />
+    <ClCompile Include="ai_scorer_near_ally.cpp" />
     <ClCompile Include="ai_scorer_distance_player.cpp" />
     <ClCompile Include="battle_actor_ghost.cpp" />
     <ClCompile Include="battle_actor_state.cpp" />
@@ -109,11 +112,14 @@
     <ClInclude Include="actor_ai.h" />
     <ClInclude Include="actor_cursor.h" />
     <ClInclude Include="ai_filter.h" />
+    <ClInclude Include="ai_filter_height.h" />
     <ClInclude Include="ai_filter_view.h" />
     <ClInclude Include="ai_generator.h" />
     <ClInclude Include="ai_generator_lattice.h" />
     <ClInclude Include="ai_path_near_player.h" />
     <ClInclude Include="ai_path_weaken.h" />
+    <ClInclude Include="ai_scorer_distance.h" />
+    <ClInclude Include="ai_scorer_near_ally.h" />
     <ClInclude Include="ai_scorer_distance_player.h" />
     <ClInclude Include="battle_actor_ghost.h" />
     <ClInclude Include="battle_actor_state.h" />

@@ -414,6 +414,15 @@
     <ClCompile Include="ai_scorer_distance_player.cpp">
       <Filter>ソース ファイル\Scene\Game\AI\Scorer</Filter>
     </ClCompile>
+    <ClCompile Include="ai_filter_height.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_scorer_distance.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Scorer</Filter>
+    </ClCompile>
+    <ClCompile Include="ai_scorer_near_ally.cpp">
+      <Filter>ソース ファイル\Scene\Game\AI\Scorer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -687,6 +696,15 @@
       <Filter>ヘッダー ファイル\Scene\Game\AI\Filter</Filter>
     </ClInclude>
     <ClInclude Include="ai_scorer_distance_player.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Scorer</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_filter_height.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_scorer_distance.h">
+      <Filter>ヘッダー ファイル\Scene\Game\AI\Scorer</Filter>
+    </ClInclude>
+    <ClInclude Include="ai_scorer_near_ally.h">
       <Filter>ヘッダー ファイル\Scene\Game\AI\Scorer</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,8 +11,8 @@
 //*****************************************************************************
 //  constant
 //*****************************************************************************
-AIScorerDistancePlayer::AIScorerDistancePlayer(BattleObjectAccessor* accessor):
-AIScorer(accessor),
+AIScorerDistancePlayer::AIScorerDistancePlayer(BattleObjectAccessor* accessor, BattleActor* owner):
+AIScorer(accessor, owner),
 _distance(1.0f),
 _range(1.0f){
 }

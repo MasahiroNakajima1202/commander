@@ -264,7 +264,7 @@ AIFilter* BattleEnemyFactory::CreateFilter(AIData& data, BattleActor* owner) {
 }
 AIScorer* BattleEnemyFactory::CreateScorer(AIData& data, BattleActor* owner) {
 	if (strcmp(data.type, "DIST_PLAYER") == 0) {
-		AIScorerDistancePlayer* scorer(new AIScorerDistancePlayer(_accessor));
+		AIScorerDistancePlayer* scorer(new AIScorerDistancePlayer(_accessor, owner));
 		scorer->SetDistance(data.dist);
 		scorer->SetRange(data.range);
 		return scorer;
